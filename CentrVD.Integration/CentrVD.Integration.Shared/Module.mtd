@@ -1,0 +1,62 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "Name": "Integration",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "CentrVD.Integration.Client",
+  "ClientBaseAssemblyName": "CentrVD.Integration.ClientBase",
+  "ClientBaseNamespace": "CentrVD.Integration.ClientBase",
+  "ClientNamespace": "CentrVD.Integration.Client",
+  "Code": "Integra",
+  "CompanyCode": "CentrVD",
+  "Cover": {
+    "NameGuid": "c4ba245d-649a-4052-b32c-9c959c4c735c",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "9ad0735c-2c48-4c5f-a7bb-6e1274bc1e9d",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "b2acd4e7-369a-4abe-bbfe-65767d43740f",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": []
+  },
+  "Dependencies": [
+    {
+      "Id": "b2cb9c14-1336-4675-b91f-e91e7bb1c3dd",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "CentrVD.Integration",
+  "IsolatedAssemblyName": "CentrVD.Integration.Isolated",
+  "IsolatedNamespace": "CentrVD.Integration.Isolated",
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "CentrVD.Integration",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "CentrVD.Integration.Server",
+  "ServerNamespace": "CentrVD.Integration.Server",
+  "SharedAssemblyName": "CentrVD.Integration.Shared",
+  "SharedNamespace": "CentrVD.Integration.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
