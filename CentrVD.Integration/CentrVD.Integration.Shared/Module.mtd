@@ -38,6 +38,36 @@
   "InterfaceNamespace": "CentrVD.Integration",
   "IsolatedAssemblyName": "CentrVD.Integration.Isolated",
   "IsolatedNamespace": "CentrVD.Integration.Isolated",
+  "PublicFunctions": [
+    {
+      "Name": "CreateMeeting",
+      "Parameters": [
+        {
+          "Name": "name",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "datetime",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "duration",
+          "ParameterType": "global::System.Double",
+          "ParameterTypeFullName": "System.Double"
+        },
+        {
+          "Name": "location",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void",
+      "WebApiRequestType": "Post"
+    }
+  ],
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "CentrVD.Integration",
