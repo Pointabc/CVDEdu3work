@@ -22,7 +22,7 @@ namespace CentrVD.Integration.Server
       var meeting = Sungero.Meetings.Meetings.Create();
       meeting.Name = name;
       meeting.Duration = duration;
-      DateTime dt; 
+      DateTime dt;
       meeting.DateTime = Calendar.TryParseDateTime(datetime, out dt) ? DateTime.Parse(datetime) : Calendar.Now;
       meeting.Location = location;
       meeting.Save();
