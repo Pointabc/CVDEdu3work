@@ -58,28 +58,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Enum_Result_Complete" xml:space="preserve">
+    <value>Подписать</value>
+  </data>
+  <data name="Action_Complete" xml:space="preserve">
+    <value>Подписать</value>
+  </data>
+  <data name="Action_CompleteHint" xml:space="preserve">
+    <value>Выполнить с результатом "Подписать"</value>
+  </data>
+  <data name="Action_CompleteConfirmationMessage" xml:space="preserve">
+    <value>Вы проверили документ и готовы его подписать?</value>
+  </data>
+  <data name="Action_CompleteDescription" xml:space="preserve">
+    <value>Выполнение задания с результатом "Подписать"</value>
+  </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Integration</value>
+    <value>Проверка протокола</value>
   </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Integration</value>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Проверка протоколов</value>
   </data>
-  <data name="CoverTab_Dictionary" xml:space="preserve">
-    <value>Dictionary</value>
-  </data>
-  <data name="CoverGroup_AccessRights" xml:space="preserve">
-    <value>AccessRights</value>
-  </data>
-  <data name="CoverAction_Rights" xml:space="preserve">
-    <value>Rights</value>
-  </data>
-  <data name="CoverDescription_Rights" xml:space="preserve">
-    <value>Права доступа для скрипта в Заочном голосовании</value>
-  </data>
-  <data name="CoverAction_Report" xml:space="preserve">
-    <value>Report</value>
-  </data>
-  <data name="CoverDescription_Report" xml:space="preserve">
-    <value>Dictionaries for report</value>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Проверка протокола</value>
   </data>
 </root>

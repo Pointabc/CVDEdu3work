@@ -12,7 +12,9 @@ namespace CentrVD.Category3
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
-      if (_obj.State.Properties.DateTime.IsChanged || _obj.State.Properties.Location.IsChanged)
+      if ((_obj.State.Properties.DateTime.OriginalValue != _obj.DateTime ||
+           _obj.State.Properties.Location.OriginalValue != _obj.Location) &&
+          !_obj.State.IsInserted)
         Functions.Meeting.CreateNotification(_obj);
       base.BeforeSave(e);
     }

@@ -11,18 +11,46 @@
   "CompanyCode": "CentrVD",
   "Cover": {
     "NameGuid": "c4ba245d-649a-4052-b32c-9c959c4c735c",
-    "Actions": [],
+    "Actions": [
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "27e21771-66f6-4e9d-b6b8-74666e9bfe52",
+        "Name": "Report",
+        "EntityTypeId": "18bdfdcd-bfd7-41d8-b84d-fd4478a0b7aa",
+        "GroupId": "b9cd9caa-9c8a-4565-beb6-61c2d94690f0",
+        "PreviousItemGuid": "914be56d-74a8-4969-813a-9d3260c6af40"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "914be56d-74a8-4969-813a-9d3260c6af40",
+        "Name": "Rights",
+        "EntityTypeId": "8e86245b-11de-4633-8f2e-fd71d799e4e0",
+        "GroupId": "b9cd9caa-9c8a-4565-beb6-61c2d94690f0"
+      }
+    ],
     "Background": null,
     "Footer": {
       "NameGuid": "9ad0735c-2c48-4c5f-a7bb-6e1274bc1e9d",
       "BackgroundPosition": "Stretch"
     },
-    "Groups": [],
+    "Groups": [
+      {
+        "NameGuid": "b9cd9caa-9c8a-4565-beb6-61c2d94690f0",
+        "Name": "AccessRights",
+        "BackgroundPosition": "Stretch",
+        "TabId": "3f567d08-47c8-4170-8050-fd544c247bc9"
+      }
+    ],
     "Header": {
       "NameGuid": "b2acd4e7-369a-4abe-bbfe-65767d43740f",
       "BackgroundPosition": "Stretch"
     },
-    "Tabs": []
+    "Tabs": [
+      {
+        "NameGuid": "3f567d08-47c8-4170-8050-fd544c247bc9",
+        "Name": "Dictionary"
+      }
+    ]
   },
   "Dependencies": [
     {
@@ -35,6 +63,34 @@
   "ExplorerTreeOrder": [
     {
       "ItemId": "a8692d85-1312-4219-8172-358b9ef2a72b"
+    },
+    {
+      "ItemId": "bc7c2eec-bf26-4222-8600-8def1530b6af",
+      "PreviousItemId": "a8692d85-1312-4219-8172-358b9ef2a72b"
+    },
+    {
+      "ItemId": "8e86245b-11de-4633-8f2e-fd71d799e4e0",
+      "PreviousItemId": "bc7c2eec-bf26-4222-8600-8def1530b6af"
+    },
+    {
+      "ItemId": "91ab0980-3472-4004-abf8-e349ad9c53db",
+      "PreviousItemId": "8e86245b-11de-4633-8f2e-fd71d799e4e0"
+    },
+    {
+      "ItemId": "777878ac-9923-4a16-ad5c-b8da9eb69291",
+      "PreviousItemId": "91ab0980-3472-4004-abf8-e349ad9c53db"
+    },
+    {
+      "ItemId": "ef185106-2d5d-4832-9a81-8f479ad02db4",
+      "PreviousItemId": "777878ac-9923-4a16-ad5c-b8da9eb69291"
+    },
+    {
+      "ItemId": "4ba1eaad-93c2-4bd7-a3b6-67f94b8618e7",
+      "PreviousItemId": "ef185106-2d5d-4832-9a81-8f479ad02db4"
+    },
+    {
+      "ItemId": "18bdfdcd-bfd7-41d8-b84d-fd4478a0b7aa",
+      "PreviousItemId": "4ba1eaad-93c2-4bd7-a3b6-67f94b8618e7"
     }
   ],
   "IconResourcesKeys": [],
@@ -71,6 +127,23 @@
       "ReturnType": "void",
       "ReturnTypeFullName": "System.Void",
       "WebApiRequestType": "Post"
+    },
+    {
+      "Name": "GrantRights",
+      "Parameters": [
+        {
+          "Name": "_obj",
+          "ParameterType": "global::CentrVD.Integration.IAbsenteeVotingTask",
+          "ParameterTypeFullName": "CentrVD.Integration.IAbsenteeVotingTask, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "rightType",
+          "ParameterType": "global::System.Guid",
+          "ParameterTypeFullName": "System.Guid"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
     }
   ],
   "PublicStructures": [],

@@ -1,0 +1,10 @@
+{
+  "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+  "Uuid": "ed968dd4-7028-4c6f-9eba-7e0daf0608f7",
+  "ModuleNameGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "TaskType": "bc7c2eec-bf26-4222-8600-8def1530b6af",
+  "IsCollection": false,
+  "ParameterType": "BooleanType",
+  "EntityType": null,
+  "Status": "Active"
+}

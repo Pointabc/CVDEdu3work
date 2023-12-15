@@ -58,28 +58,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Integration</value>
+    <value>Отчет</value>
   </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Integration</value>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Отчеты</value>
   </data>
-  <data name="CoverTab_Dictionary" xml:space="preserve">
-    <value>Dictionary</value>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Отчет</value>
   </data>
-  <data name="CoverGroup_AccessRights" xml:space="preserve">
-    <value>AccessRights</value>
+  <data name="Property_ReportKind" xml:space="preserve">
+    <value>Вид отчета</value>
   </data>
-  <data name="CoverAction_Rights" xml:space="preserve">
-    <value>Rights</value>
+  <data name="Enum_ReportKind_PurchasingDocument" xml:space="preserve">
+    <value>Закупочный документ</value>
   </data>
-  <data name="CoverDescription_Rights" xml:space="preserve">
-    <value>Права доступа для скрипта в Заочном голосовании</value>
-  </data>
-  <data name="CoverAction_Report" xml:space="preserve">
-    <value>Report</value>
-  </data>
-  <data name="CoverDescription_Report" xml:space="preserve">
-    <value>Dictionaries for report</value>
+  <data name="Enum_ReportKind_FreeFormDocument" xml:space="preserve">
+    <value>Документ произвольной формы</value>
   </data>
 </root>

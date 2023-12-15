@@ -1,0 +1,13 @@
+{
+  "$type": "Sungero.NoCode.Settings.Models.SettingsLayerLocalization, Sungero.NoCode.Settings.Interfaces",
+  "Name": {
+    "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+    "default": "За",
+    "ru-RU": "За"
+  },
+  "Description": {
+    "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+    "default": "Вы уверены, что хотите проголосовать ЗА по данному документу?",
+    "ru-RU": "Вы уверены, что хотите проголосовать ЗА по данному документу?"
+  }
+}

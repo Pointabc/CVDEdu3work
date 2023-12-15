@@ -58,28 +58,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Enum_Result_Complete" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Action_Complete" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Action_CompleteHint" xml:space="preserve">
+    <value>Complete with Result "Up"</value>
+  </data>
+  <data name="Action_CompleteConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to vote YES on this document?</value>
+  </data>
+  <data name="Action_CompleteDescription" xml:space="preserve">
+    <value>Complete the assignment with result "Up"</value>
+  </data>
+  <data name="Enum_Result_Abstained" xml:space="preserve">
+    <value>Abstained</value>
+  </data>
+  <data name="Action_AbstainedDescription" xml:space="preserve">
+    <value>Complete the assignment with result "Abstained"</value>
+  </data>
+  <data name="Action_AbstainedConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to ABSTAINED from voting on this document?</value>
+  </data>
+  <data name="Action_Abstained" xml:space="preserve">
+    <value>Abstained</value>
+  </data>
+  <data name="Action_AbstainedHint" xml:space="preserve">
+    <value>Complete with Result "Abstained"</value>
+  </data>
+  <data name="Enum_Result_Against" xml:space="preserve">
+    <value>Against</value>
+  </data>
+  <data name="Action_Against" xml:space="preserve">
+    <value>Against</value>
+  </data>
+  <data name="Action_AgainstHint" xml:space="preserve">
+    <value>Complete with Result "Against"</value>
+  </data>
+  <data name="Action_AgainstConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to vote AGAINST this document?</value>
+  </data>
+  <data name="Action_AgainstDescription" xml:space="preserve">
+    <value>Complete the assignment with result "Against"</value>
+  </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Integration</value>
+    <value>Voting assignment</value>
   </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Integration</value>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Voting assignment</value>
   </data>
-  <data name="CoverTab_Dictionary" xml:space="preserve">
-    <value>Dictionary</value>
-  </data>
-  <data name="CoverGroup_AccessRights" xml:space="preserve">
-    <value>AccessRights</value>
-  </data>
-  <data name="CoverAction_Rights" xml:space="preserve">
-    <value>Rights</value>
-  </data>
-  <data name="CoverDescription_Rights" xml:space="preserve">
-    <value>Права доступа для скрипта в Заочном голосовании</value>
-  </data>
-  <data name="CoverAction_Report" xml:space="preserve">
-    <value>Report</value>
-  </data>
-  <data name="CoverDescription_Report" xml:space="preserve">
-    <value>Dictionaries for report</value>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Voting assignments</value>
   </data>
 </root>

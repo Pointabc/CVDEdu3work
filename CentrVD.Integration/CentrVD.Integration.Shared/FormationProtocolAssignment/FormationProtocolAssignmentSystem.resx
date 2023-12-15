@@ -58,28 +58,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Enum_Result_Complete" xml:space="preserve">
+    <value>Create a protocol</value>
+  </data>
+  <data name="Action_Complete" xml:space="preserve">
+    <value>Create protocol</value>
+  </data>
+  <data name="Action_CompleteHint" xml:space="preserve">
+    <value>Complete with Result "Create a protocol"</value>
+  </data>
+  <data name="Action_CompleteConfirmationMessage" xml:space="preserve">
+    <value>Based on the voting results, a new document &lt;Report Name&gt; will be generated and sent for signature.</value>
+  </data>
+  <data name="Action_CompleteDescription" xml:space="preserve">
+    <value>Complete the assignment with result "Create a protocol"</value>
+  </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Integration</value>
+    <value>Formation of the protocol</value>
   </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Integration</value>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Formation of the protocol</value>
   </data>
-  <data name="CoverTab_Dictionary" xml:space="preserve">
-    <value>Dictionary</value>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Formation of the protocols</value>
   </data>
-  <data name="CoverGroup_AccessRights" xml:space="preserve">
-    <value>AccessRights</value>
+  <data name="Enum_Result_SendForRevote" xml:space="preserve">
+    <value>Send for revote</value>
   </data>
-  <data name="CoverAction_Rights" xml:space="preserve">
-    <value>Rights</value>
+  <data name="Action_SendForRevote" xml:space="preserve">
+    <value>Send for revote</value>
   </data>
-  <data name="CoverDescription_Rights" xml:space="preserve">
-    <value>Права доступа для скрипта в Заочном голосовании</value>
+  <data name="Action_SendForRevoteHint" xml:space="preserve">
+    <value>Complete with Result "Send for revote"</value>
   </data>
-  <data name="CoverAction_Report" xml:space="preserve">
-    <value>Report</value>
+  <data name="Action_SendForRevoteConfirmationMessage" xml:space="preserve">
+    <value>Do you need to send a document for a second vote?</value>
   </data>
-  <data name="CoverDescription_Report" xml:space="preserve">
-    <value>Dictionaries for report</value>
+  <data name="Action_SendForRevoteDescription" xml:space="preserve">
+    <value>Complete the assignment with result "Send for revote"</value>
+  </data>
+  <data name="Enum_Result_DoneLessMinutes" xml:space="preserve">
+    <value>Complete without protocol</value>
+  </data>
+  <data name="Action_DoneLessMinutes" xml:space="preserve">
+    <value>Complete without protocol</value>
+  </data>
+  <data name="Action_DoneLessMinutesHint" xml:space="preserve">
+    <value>Complete with Result "Complete without protocol"</value>
+  </data>
+  <data name="Action_DoneLessMinutesConfirmationMessage" xml:space="preserve">
+    <value>The task will be completed without creating a protocol.</value>
+  </data>
+  <data name="Action_DoneLessMinutesDescription" xml:space="preserve">
+    <value>Complete the assignment with result "Complete without protocol"</value>
   </data>
 </root>

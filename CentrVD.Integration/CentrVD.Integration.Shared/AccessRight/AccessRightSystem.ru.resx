@@ -58,28 +58,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DisplayName" xml:space="preserve">
-    <value>Integration</value>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Имя</value>
   </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Integration</value>
+  <data name="Property_Right" xml:space="preserve">
+    <value>Право доступа</value>
   </data>
-  <data name="CoverTab_Dictionary" xml:space="preserve">
-    <value>Dictionary</value>
+  <data name="Enum_Right_Read" xml:space="preserve">
+    <value>Просмотр</value>
   </data>
-  <data name="CoverGroup_AccessRights" xml:space="preserve">
-    <value>AccessRights</value>
-  </data>
-  <data name="CoverAction_Rights" xml:space="preserve">
-    <value>Rights</value>
-  </data>
-  <data name="CoverDescription_Rights" xml:space="preserve">
-    <value>Права доступа для скрипта в Заочном голосовании</value>
-  </data>
-  <data name="CoverAction_Report" xml:space="preserve">
-    <value>Report</value>
-  </data>
-  <data name="CoverDescription_Report" xml:space="preserve">
-    <value>Dictionaries for report</value>
+  <data name="Enum_Right_Change" xml:space="preserve">
+    <value>Изменение</value>
   </data>
 </root>
