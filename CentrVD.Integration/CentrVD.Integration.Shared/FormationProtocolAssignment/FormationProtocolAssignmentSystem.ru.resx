@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Enum_Result_Complete" xml:space="preserve">
+    <value>Сформировать протокол</value>
+  </data>
+  <data name="Action_Complete" xml:space="preserve">
+    <value>Сформировать протокол</value>
+  </data>
+  <data name="Action_CompleteHint" xml:space="preserve">
+    <value>Выполнить с результатом "Сформировать протокол"</value>
+  </data>
+  <data name="Action_CompleteConfirmationMessage" xml:space="preserve">
+    <value>По результатам голосования будет сформирован и отправлен на подпись новый документ &lt;Имя отчета&gt;.</value>
+  </data>
+  <data name="Action_CompleteDescription" xml:space="preserve">
+    <value>Выполнение задания с результатом "Сформировать протокол"</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Формирование протокола</value>
+  </data>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Формирование протокола</value>
+  </data>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Формирование протоколов</value>
+  </data>
+  <data name="Enum_Result_SendForRevote" xml:space="preserve">
+    <value>Отправить на повторное голосование</value>
+  </data>
+  <data name="Action_SendForRevote" xml:space="preserve">
+    <value>Отправить на повторное голосование</value>
+  </data>
+  <data name="Action_SendForRevoteHint" xml:space="preserve">
+    <value>Выполнить с результатом "Отправить на повторное голосование"</value>
+  </data>
+  <data name="Action_SendForRevoteConfirmationMessage" xml:space="preserve">
+    <value>Требуется отправить документ на повторное голосование?</value>
+  </data>
+  <data name="Action_SendForRevoteDescription" xml:space="preserve">
+    <value>Выполнение задания с результатом "Отправить на повторное голосование"</value>
+  </data>
+  <data name="Enum_Result_DoneLessMinutes" xml:space="preserve">
+    <value>Завершить без протокола</value>
+  </data>
+  <data name="Action_DoneLessMinutes" xml:space="preserve">
+    <value>Завершить без протокола</value>
+  </data>
+  <data name="Action_DoneLessMinutesHint" xml:space="preserve">
+    <value>Выполнить с результатом "Завершить без протокола"</value>
+  </data>
+  <data name="Action_DoneLessMinutesConfirmationMessage" xml:space="preserve">
+    <value>Задача будет завершена без создания протокола.</value>
+  </data>
+  <data name="Action_DoneLessMinutesDescription" xml:space="preserve">
+    <value>Выполнение задания с результатом "Завершить без протокола"</value>
+  </data>
+</root>
