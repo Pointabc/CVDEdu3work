@@ -10,7 +10,7 @@ namespace CentrVD.Integration.Server
   {
 
     /// <summary>
-    /// Выдать всем участникам Заочного голосования права на вложения.
+    /// Выдать всем участникам Заочного голосования права на документ на согласование и протокол.
     /// </summary>
     [Public]
     public static void GrantRights(CentrVD.Integration.IAbsenteeVotingTask _obj, Guid rightType)
@@ -31,10 +31,10 @@ namespace CentrVD.Integration.Server
       
       if (protocol != null)
       {
-        protocol.AccessRights.Grant(_obj.Chairman, Sungero.Core.DefaultAccessRightsTypes.Read);
-        protocol.AccessRights.Grant(_obj.Secretary, Sungero.Core.DefaultAccessRightsTypes.Read);
+        protocol.AccessRights.Grant(_obj.Chairman, rightType);
+        protocol.AccessRights.Grant(_obj.Secretary, rightType);
         foreach(Sungero.Company.IEmployee member in recipients)
-          protocol.AccessRights.Grant(member, Sungero.Core.DefaultAccessRightsTypes.Read);
+          protocol.AccessRights.Grant(member, rightType);
         protocol.AccessRights.Save();
       }
     }

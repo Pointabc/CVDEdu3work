@@ -68,7 +68,7 @@
     <value>Выполнить с результатом "Сформировать протокол"</value>
   </data>
   <data name="Action_CompleteConfirmationMessage" xml:space="preserve">
-    <value>По результатам голосования будет сформирован и отправлен на подпись новый документ &lt;Имя отчета&gt;.</value>
+    <value>По результатам голосования будет сформирован и отправлен на подпись новый документ.</value>
   </data>
   <data name="Action_CompleteDescription" xml:space="preserve">
     <value>Выполнение задания с результатом "Сформировать протокол"</value>

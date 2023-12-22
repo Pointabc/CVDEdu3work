@@ -3,6 +3,19 @@
   "NameGuid": "bc7c2eec-bf26-4222-8600-8def1530b6af",
   "Name": "AbsenteeVotingTask",
   "AccessRightsMode": "Both",
+  "Actions": [
+    {
+      "NameGuid": "0871245b-1f6a-45e4-bb5c-16320db12a30",
+      "Name": "Start",
+      "AllowUserDisableConfirmation": true,
+      "GenerateHandler": true,
+      "IsAncestorMetadata": true,
+      "NeedConfirmation": true,
+      "Overridden": [
+        "GenerateHandler"
+      ]
+    }
+  ],
   "AttachmentGroups": [
     {
       "NameGuid": "4c936afb-2344-442d-b313-e57d1bf11e5f",
@@ -75,6 +88,9 @@
       "Name": "ProtocolGenerationTaskBlock",
       "BaseGuid": "9cc122a7-f93b-4053-9219-cd2f22af0365",
       "EntityType": "777878ac-9923-4a16-ad5c-b8da9eb69291",
+      "HandledEvents": [
+        "ProtocolGenerationTaskBlockEnd"
+      ],
       "Properties": [
         {
           "$type": "Sungero.Metadata.StringBlockPropertyMetadata, Sungero.Metadata",

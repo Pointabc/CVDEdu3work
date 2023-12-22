@@ -68,7 +68,7 @@
     <value>Complete with Result "Create a protocol"</value>
   </data>
   <data name="Action_CompleteConfirmationMessage" xml:space="preserve">
-    <value>Based on the voting results, a new document &lt;Report Name&gt; will be generated and sent for signature.</value>
+    <value>Based on the voting results, a new document will be generated and sent for signature.</value>
   </data>
   <data name="Action_CompleteDescription" xml:space="preserve">
     <value>Complete the assignment with result "Create a protocol"</value>
