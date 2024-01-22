@@ -13,12 +13,46 @@
     "NameGuid": "c4ba245d-649a-4052-b32c-9c959c4c735c",
     "Actions": [
       {
+        "$type": "Sungero.Metadata.CoverReportActionMetadata, Sungero.Reporting.Shared",
+        "NameGuid": "06565516-c474-4e3d-870b-f5a61fcb595d",
+        "Name": "DocumentInTasks",
+        "CoverActionPresenterTypeName": "Sungero.Reporting.Client.CoverReportActionPresenter, Sungero.Reporting.Client",
+        "GroupId": "3d5ddec9-9927-4b01-95da-a074c97e8a29",
+        "ReportId": "5af0c67a-15e6-4e57-b883-127ffecb88c7"
+      },
+      {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
         "NameGuid": "27e21771-66f6-4e9d-b6b8-74666e9bfe52",
         "Name": "Report",
         "EntityTypeId": "18bdfdcd-bfd7-41d8-b84d-fd4478a0b7aa",
         "GroupId": "b9cd9caa-9c8a-4565-beb6-61c2d94690f0",
         "PreviousItemGuid": "914be56d-74a8-4969-813a-9d3260c6af40"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverReportActionMetadata, Sungero.Reporting.Shared",
+        "NameGuid": "32bb9b6a-9558-4973-a370-be0ccb63f3b6",
+        "Name": "ReportTest",
+        "CoverActionPresenterTypeName": "Sungero.Reporting.Client.CoverReportActionPresenter, Sungero.Reporting.Client",
+        "GroupId": "1cececcb-6313-4c8a-8e10-55e08f5603a4",
+        "PreviousItemGuid": "82052257-b916-4cf3-9d22-3426e62b179b",
+        "ReportId": "a603a100-17ff-4d7f-aaaa-7315e58eb08c"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverReportActionMetadata, Sungero.Reporting.Shared",
+        "NameGuid": "68d5997a-a9c3-430a-a559-aa88d8f3308c",
+        "Name": "ReportSigning",
+        "CoverActionPresenterTypeName": "Sungero.Reporting.Client.CoverReportActionPresenter, Sungero.Reporting.Client",
+        "GroupId": "b9cd9caa-9c8a-4565-beb6-61c2d94690f0",
+        "PreviousItemGuid": "27e21771-66f6-4e9d-b6b8-74666e9bfe52",
+        "ReportId": "814479c3-8706-4d72-9d5e-78280fa6c702"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverReportActionMetadata, Sungero.Reporting.Shared",
+        "NameGuid": "82052257-b916-4cf3-9d22-3426e62b179b",
+        "Name": "ReportByEmploee",
+        "CoverActionPresenterTypeName": "Sungero.Reporting.Client.CoverReportActionPresenter, Sungero.Reporting.Client",
+        "GroupId": "1cececcb-6313-4c8a-8e10-55e08f5603a4",
+        "ReportId": "814479c3-8706-4d72-9d5e-78280fa6c702"
       },
       {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
@@ -39,6 +73,19 @@
         "Name": "AccessRights",
         "BackgroundPosition": "Stretch",
         "TabId": "3f567d08-47c8-4170-8050-fd544c247bc9"
+      },
+      {
+        "NameGuid": "1cececcb-6313-4c8a-8e10-55e08f5603a4",
+        "Name": "PeportByEmploee",
+        "BackgroundPosition": "Stretch",
+        "TabId": "abf44f81-e12b-4acc-b31f-bb4541ee46d0"
+      },
+      {
+        "NameGuid": "3d5ddec9-9927-4b01-95da-a074c97e8a29",
+        "Name": "ReportByTasks",
+        "BackgroundPosition": "Stretch",
+        "PreviousItemGuid": "1cececcb-6313-4c8a-8e10-55e08f5603a4",
+        "TabId": "abf44f81-e12b-4acc-b31f-bb4541ee46d0"
       }
     ],
     "Header": {
@@ -49,6 +96,11 @@
       {
         "NameGuid": "3f567d08-47c8-4170-8050-fd544c247bc9",
         "Name": "Dictionary"
+      },
+      {
+        "NameGuid": "abf44f81-e12b-4acc-b31f-bb4541ee46d0",
+        "Name": "Reports",
+        "PreviousItemGuid": "3f567d08-47c8-4170-8050-fd544c247bc9"
       }
     ]
   },
@@ -91,7 +143,22 @@
     {
       "ItemId": "18bdfdcd-bfd7-41d8-b84d-fd4478a0b7aa",
       "PreviousItemId": "4ba1eaad-93c2-4bd7-a3b6-67f94b8618e7"
+    },
+    {
+      "ItemId": "814479c3-8706-4d72-9d5e-78280fa6c702",
+      "PreviousItemId": "18bdfdcd-bfd7-41d8-b84d-fd4478a0b7aa"
+    },
+    {
+      "ItemId": "5af0c67a-15e6-4e57-b883-127ffecb88c7",
+      "PreviousItemId": "814479c3-8706-4d72-9d5e-78280fa6c702"
+    },
+    {
+      "ItemId": "a603a100-17ff-4d7f-aaaa-7315e58eb08c",
+      "PreviousItemId": "5af0c67a-15e6-4e57-b883-127ffecb88c7"
     }
+  ],
+  "HandledEvents": [
+    "InitializingServer"
   ],
   "IconResourcesKeys": [],
   "Importance": "Medium",
@@ -140,6 +207,30 @@
           "Name": "rightType",
           "ParameterType": "global::System.Guid",
           "ParameterTypeFullName": "System.Guid"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "UpdateApprovalSheetReportTable",
+      "Parameters": [
+        {
+          "Name": "reportSessionId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "UpdateEmployeeSignedDocumentReportTable",
+      "Parameters": [
+        {
+          "Name": "reportSessionId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
         }
       ],
       "ReturnType": "void",

@@ -1,0 +1,61 @@
+{
+  "$type": "Sungero.Metadata.ReportMetadata, Sungero.Reporting.Shared",
+  "NameGuid": "814479c3-8706-4d72-9d5e-78280fa6c702",
+  "Name": "EmployeeSignedDocumentsReport",
+  "AssociatedGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "BaseGuid": "cef9a810-3f30-4eca-9fe3-30992af0b818",
+  "DataSources": [],
+  "DefaultExportFormat": "Pdf",
+  "ExportFormats": [
+    "Pdf"
+  ],
+  "HandledEvents": [
+    "BeforeExecuteClient",
+    "AfterExecuteServer"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "IntegrationEmployeeSignedDocumentsReport",
+  "Overridden": [
+    "PublicConstants",
+    "PublicStructures",
+    "DisplayName",
+    "Description",
+    "HandledEvents",
+    "Parameters"
+  ],
+  "Parameters": [
+    {
+      "NameGuid": "34d1becb-6091-4729-b568-96c2d00d8f1f",
+      "Name": "Employees",
+      "EntityType": "b7905516-2be5-4931-961c-cb38d5677565",
+      "InternalDataTypeName": "Sungero.Company.IEmployee, Sungero.Domain.Interfaces",
+      "IsCollection": true
+    },
+    {
+      "NameGuid": "ec8167f3-d856-4d88-afe0-c6fe734692f8",
+      "Name": "StartDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "e7302df5-4d52-41bf-b757-873f4d421415",
+      "Name": "EndDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "780ac600-7f3c-4a15-bd26-f9d7bc030da8",
+      "Name": "Signed",
+      "InternalDataTypeName": "System.Boolean",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "cad8d7e7-76ee-4a3e-af82-6b743e3e5f3a",
+      "Name": "ReportSessionId",
+      "InternalDataTypeName": "System.String"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "Versions": []
+}

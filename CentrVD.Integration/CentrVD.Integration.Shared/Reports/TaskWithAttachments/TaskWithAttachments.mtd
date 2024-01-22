@@ -1,0 +1,51 @@
+{
+  "$type": "Sungero.Metadata.ReportMetadata, Sungero.Reporting.Shared",
+  "NameGuid": "5af0c67a-15e6-4e57-b883-127ffecb88c7",
+  "Name": "TaskWithAttachments",
+  "AssociatedGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "BaseGuid": "cef9a810-3f30-4eca-9fe3-30992af0b818",
+  "DataSources": [
+    {
+      "NameGuid": "82723681-8e2c-447a-9b3d-4d317ddc5ea5",
+      "Name": "Docs",
+      "EntityType": "58cca102-1e97-4f07-b6ac-fd866a8b7cb1"
+    }
+  ],
+  "DefaultExportFormat": "Pdf",
+  "ExportFormats": [
+    "Pdf"
+  ],
+  "HandledEvents": [
+    "BeforeExecuteClient"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "IntegrationTaskWithAttachments",
+  "Overridden": [
+    "PublicConstants",
+    "PublicStructures",
+    "DisplayName",
+    "Description",
+    "Parameters",
+    "HandledEvents",
+    "DataSources"
+  ],
+  "Parameters": [
+    {
+      "NameGuid": "1beec0a7-3cd6-4fca-8633-64333c14b683",
+      "Name": "StartDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsRequired": true,
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "0e1a03c5-fd73-4d9a-99b6-9656fb4e005c",
+      "Name": "EndDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsRequired": true,
+      "IsSimpleDataType": true
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "Versions": []
+}

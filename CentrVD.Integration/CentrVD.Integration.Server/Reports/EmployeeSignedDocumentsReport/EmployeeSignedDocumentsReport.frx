@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReferencedAssemblies="System.dll&#13;&#10;System.Core.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;Sungero.Domain.Shared&#13;&#10;Sungero.CoreEntities.Shared&#13;&#10;Sungero.Reporting.Shared&#13;&#10;CommonLibrary&#13;&#10;Sungero.Localization&#13;&#10;Sungero.Declension&#13;&#10;Sungero.Domain.Interfaces&#13;&#10;Sungero.Company.Shared&#13;&#10;Sungero.Company.Server&#13;&#10;CentrVD.Integration.Shared&#13;&#10;CentrVD.Integration.Server" ReportInfo.CreatorVersion="2020.2.12.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+using Sungero.Company;
+using Sungero.Domain.Shared;
+using Sungero.CoreEntities;
+using Sungero.Core;
+using Resources = CentrVD.Integration.Reports.Resources;
+
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+  }
+}
+  </ScriptText>
+  <Dictionary>
+    <SungeroSqlDataConnection Name="Sungero_Connection" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties" ConnectionStringExpression="[SungeroConnectionString]">
+      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true" CanEdit="true" SelectCommand="${DataSource}">
+        <Column Name="JobTitle" DataType="System.String" PropName="Column"/>
+        <Column Name="Department" DataType="System.String" PropName="Column"/>
+        <Column Name="DocumentName" DataType="System.String" PropName="Column"/>
+        <Column Name="SignedResult" DataType="System.Boolean" PropName="Column"/>
+        <CommandParameter Name="ReportSessionId" DataType="16" IsDbType="true" Expression="[ReportSessionId]"/>
+      </TableDataSource>
+    </SungeroSqlDataConnection>
+    <SungeroParameter Name="SungeroConnectionString" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties, DontShow" Id="b7a139e1-f2d9-4d58-8627-fd2f93b60fb7" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="Employees" Id="34d1becb-6091-4729-b568-96c2d00d8f1f" IsRequired="false" IsCollection="true" InternalDataType="Sungero.Company.IEmployee, Sungero.Domain.Interfaces" IsSimpleDataType="false" EntityTypeId="b7905516-2be5-4931-961c-cb38d5677565"/>
+    <SungeroParameter Name="StartDate" Id="ec8167f3-d856-4d88-afe0-c6fe734692f8" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="EndDate" Id="e7302df5-4d52-41bf-b757-873f4d421415" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="Signed" Id="780ac600-7f3c-4a15-bd26-f9d7bc030da8" IsRequired="false" IsCollection="false" InternalDataType="System.Boolean" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="ReportSessionId" Id="cad8d7e7-76ee-4a3e-af82-6b743e3e5f3a" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Width="94.5" Height="18.9" Text="JobTitle" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="94.5" Width="94.5" Height="18.9" Text="Department" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="189" Width="94.5" Height="18.9" Text="DocumentName" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="283.5" Width="94.5" Height="18.9" Text="SignedResult" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="Table">
+      <TextObject Name="Text1" Width="94.5" Height="18.9" Text="[Table.JobTitle]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="94.5" Width="94.5" Height="18.9" Text="[Table.Department]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="189" Width="94.5" Height="18.9" Text="[Table.DocumentName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="283.5" Width="94.5" Height="18.9" Text="[Table.SignedResult]" Format="Boolean" Format.TrueText="+" Format.FalseText="" HorzAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

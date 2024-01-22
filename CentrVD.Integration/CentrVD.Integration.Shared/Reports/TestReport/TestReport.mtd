@@ -1,0 +1,41 @@
+{
+  "$type": "Sungero.Metadata.ReportMetadata, Sungero.Reporting.Shared",
+  "NameGuid": "a603a100-17ff-4d7f-aaaa-7315e58eb08c",
+  "Name": "TestReport",
+  "AssociatedGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "BaseGuid": "cef9a810-3f30-4eca-9fe3-30992af0b818",
+  "DataSources": [],
+  "DefaultExportFormat": "Pdf",
+  "ExportFormats": [
+    "Pdf"
+  ],
+  "HandledEvents": [
+    "BeforeExecuteClient",
+    "AfterExecuteServer"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "IntegrationEmployeeSignedDocumentsReport",
+  "Overridden": [
+    "PublicConstants",
+    "PublicStructures",
+    "DisplayName",
+    "Description",
+    "HandledEvents",
+    "Parameters"
+  ],
+  "Parameters": [
+    {
+      "NameGuid": "0dbda18d-c207-4d9d-9de4-76177d3d80c3",
+      "Name": "ReportSessionId",
+      "InternalDataTypeName": "System.String"
+    },
+    {
+      "NameGuid": "db3c3e04-6ddf-4fb0-8dd4-994a97c12ab2",
+      "Name": "Employee",
+      "InternalDataTypeName": "System.String"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "Versions": []
+}

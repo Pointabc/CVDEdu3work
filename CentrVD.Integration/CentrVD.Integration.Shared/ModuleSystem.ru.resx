@@ -59,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DisplayName" xml:space="preserve">
-    <value>Integration</value>
+    <value>Практика</value>
   </data>
   <data name="CoverTab_Dictionary" xml:space="preserve">
     <value>Справочник</value>
@@ -78,5 +78,35 @@
   </data>
   <data name="CoverAction_Report" xml:space="preserve">
     <value>Отчеты</value>
+  </data>
+  <data name="CoverTab_Reports" xml:space="preserve">
+    <value>Отчеты</value>
+  </data>
+  <data name="CoverGroup_PeportByEmploee" xml:space="preserve">
+    <value>Отчеты по сотрудникам</value>
+  </data>
+  <data name="CoverAction_ReportByEmploee" xml:space="preserve">
+    <value>Документы подписанные  сотрудником</value>
+  </data>
+  <data name="CoverDescription_ReportByEmploee" xml:space="preserve">
+    <value>Документы подписанные  сотрудником</value>
+  </data>
+  <data name="CoverTitle" xml:space="preserve">
+    <value>Практика</value>
+  </data>
+  <data name="CoverGroup_ReportByTasks" xml:space="preserve">
+    <value>Отчет по документу в задачах</value>
+  </data>
+  <data name="CoverAction_DocumentInTasks" xml:space="preserve">
+    <value>Документы в задачах</value>
+  </data>
+  <data name="CoverAction_ReportTest" xml:space="preserve">
+    <value>Тестовый отчет</value>
+  </data>
+  <data name="CoverAction_ReportSigning" xml:space="preserve">
+    <value>Сотрудник подписал документы</value>
+  </data>
+  <data name="CoverDescription_ReportSigning" xml:space="preserve">
+    <value>Сотрудник подписал документы</value>
   </data>
 </root>

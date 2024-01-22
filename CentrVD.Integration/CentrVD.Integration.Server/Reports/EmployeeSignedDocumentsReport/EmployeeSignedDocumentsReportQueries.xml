@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queries>
+  <query key="DataSource">
+    <default><![CDATA[select JobTitle, Department, DocumentName, SignedResult from Sungero_Reports_EmployeeSignedDocumentReportV2 where ReportSessionId = @ReportSessionId]]></default>
+  </query>
+  <query key="CreateReportTable">
+    <mssql><![CDATA[create table {0}
+([ReportSessionId] [varchar](256) NULL,
+ [JobTitle] [varchar](max) NOT NULL,
+ [Department] [varchar](max) NOT NULL,
+ [DocumentName] [varchar](max) NOT NULL,
+ [SignedResult] [bit] NOT NULL)]]></mssql>
+    <postgres><![CDATA[CREATE TABLE IF NOT EXISTS {0}
+([ReportSessionId] varchar(256) NULL,
+ [JobTitle] citext NOT NULL,
+ [Department] citext NOT NULL,
+ [DocumentName] citext NOT NULL,
+ [SignedResult] boolean NOT NULL)]]></postgres>
+  </query>
+  <query key="InsertIntoReportTable">
+    <default><![CDATA[insert into Sungero_Reports_EmployeeSignedDocumentReportV2(ReportSessionId, JobTitle, Department, DocumentName, SignedResult) values (@ReportSessionId, @JobTitle, @Department, @DocumentName, @SignedResult)]]></default>
+  </query>
+</queries>
