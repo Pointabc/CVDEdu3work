@@ -21,15 +21,15 @@
     "DisplayName",
     "Description",
     "HandledEvents",
-    "Parameters"
+    "Parameters",
+    "DataSources"
   ],
   "Parameters": [
     {
       "NameGuid": "34d1becb-6091-4729-b568-96c2d00d8f1f",
-      "Name": "Employees",
+      "Name": "Employee",
       "EntityType": "b7905516-2be5-4931-961c-cb38d5677565",
-      "InternalDataTypeName": "Sungero.Company.IEmployee, Sungero.Domain.Interfaces",
-      "IsCollection": true
+      "InternalDataTypeName": "Sungero.Company.IEmployee, Sungero.Domain.Interfaces"
     },
     {
       "NameGuid": "ec8167f3-d856-4d88-afe0-c6fe734692f8",

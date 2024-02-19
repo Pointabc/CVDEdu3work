@@ -109,4 +109,7 @@
   <data name="CoverDescription_ReportSigning" xml:space="preserve">
     <value>Сотрудник подписал документы</value>
   </data>
+  <data name="CoverAction_OnlyTableReport" xml:space="preserve">
+    <value>Отчет из таблицы</value>
+  </data>
 </root>

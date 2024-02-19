@@ -1,0 +1,22 @@
+{
+  "$type": "Sungero.Metadata.ReportMetadata, Sungero.Reporting.Shared",
+  "NameGuid": "7753877a-340d-4026-a18d-a05f548974ce",
+  "Name": "OnlyTableReport",
+  "AssociatedGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "BaseGuid": "cef9a810-3f30-4eca-9fe3-30992af0b818",
+  "DataSources": [],
+  "DefaultExportFormat": "Pdf",
+  "ExportFormats": [
+    "Pdf"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "IntegrationOnlyTableReport",
+  "Overridden": [
+    "PublicConstants",
+    "PublicStructures"
+  ],
+  "Parameters": [],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "Versions": []
+}

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queries>
+  <query key="CreateReportTable">
+    <mssql><![CDATA[create table {0}
+([ReportSessionId] [varchar](256) NULL,
+ [JobTitle] [nvarchar](max) NULL,
+ [Employee1] [nvarchar](max) NULL,
+ [Department] [nvarchar](max) NULL,
+ [BusinessUnit1] [nvarchar](max) NULL,
+ [DocumentName] [nvarchar](max) NULL,
+ [DocumentLink1] [nvarchar](max) NULL,
+ [SignedResult] [int] NULL)]]></mssql>
+    <postgres><![CDATA[CREATE TABLE IF NOT EXISTS {0}
+([ReportSessionId] varchar(256) NULL,
+ [JobTitle] citext NOT NULL,
+ [Department] citext NOT NULL,
+ [DocumentName] citext NOT NULL,
+ [SignedResult] boolean NOT NULL)]]></postgres>
+  </query>
+  <query key="DataSourceNew">
+    <mssql><![CDATA[SELECT Sungero_Company_JobTitle.Name as JobTitle
+  ,Sungero_Core_Recipient.Name as Employee
+  ,dep.Name as Department
+  ,businessUnit.Name as BusinessUnit
+  ,doc.Name as DocumentName
+  ,SignatureType as SignedResult
+	,SigningDate as SigningDate
+FROM Sungero_Core_Sign
+LEFT JOIN Sungero_Core_Recipient
+ON Sungero_Core_Sign.Signatory = Sungero_Core_Recipient.Id
+LEFT JOIN Sungero_Content_EDoc doc
+ON Sungero_Core_Sign.EntityId = doc.Id
+LEFT JOIN Sungero_Company_JobTitle
+ON Sungero_Company_JobTitle.Id = Sungero_Core_Recipient.JobTitle_Company_Sungero
+LEFT JOIN Sungero_Core_Recipient dep
+ON dep.Id = Sungero_Core_Recipient.Department_Company_Sungero
+LEFT JOIN Sungero_Content_EDoc docNOR
+ON docNOR.BusinessUnit_Docflow_Sungero = Sungero_Core_Recipient.Parent
+LEFT JOIN Sungero_Core_Recipient businessUnit
+ON businessUnit.Id = dep.Parent;]]></mssql>
+  </query>
+  <query key="InsertIntoEmployeeTable">
+    <mssql><![CDATA[insert into Sungero_Reports_EmployeeSignedDocumentReportV2(ReportSessionId, JobTitle, Employee1, Department, BusinessUnit1, DocumentName, DocumentLink1, SignedResult) values (@ReportSessionId, @JobTitle, @Employee1, @Department, @BusinessUnit1, @BusinessUnit1, @DocumentName, @DocumentLink1, @SignedResult)]]></mssql>
+  </query>
+</queries>

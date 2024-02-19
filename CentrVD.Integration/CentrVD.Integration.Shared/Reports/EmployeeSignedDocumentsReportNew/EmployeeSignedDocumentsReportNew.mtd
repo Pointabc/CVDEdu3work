@@ -1,0 +1,38 @@
+{
+  "$type": "Sungero.Metadata.ReportMetadata, Sungero.Reporting.Shared",
+  "NameGuid": "20948ed3-6dd4-416e-bf92-60919c8eb631",
+  "Name": "EmployeeSignedDocumentsReportNew",
+  "AssociatedGuid": "023b47fd-48d9-42e4-a6fc-200339dc84f8",
+  "BaseGuid": "cef9a810-3f30-4eca-9fe3-30992af0b818",
+  "DataSources": [],
+  "DefaultExportFormat": "Pdf",
+  "ExportFormats": [
+    "Pdf"
+  ],
+  "HandledEvents": [
+    "BeforeExecuteClient",
+    "AfterExecuteServer",
+    "BeforeExecuteServer"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "IntegrationEmployeeSignedDocumentsReport",
+  "Overridden": [
+    "PublicConstants",
+    "PublicStructures",
+    "DisplayName",
+    "Description",
+    "HandledEvents",
+    "Parameters",
+    "DataSources"
+  ],
+  "Parameters": [
+    {
+      "NameGuid": "553a66f1-dc06-440e-94b1-0244c6111aa5",
+      "Name": "ReportSessionId",
+      "InternalDataTypeName": "System.String"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "Versions": []
+}

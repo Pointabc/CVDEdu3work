@@ -31,16 +31,17 @@ namespace FastReport
   </ScriptText>
   <Dictionary>
     <SungeroSqlDataConnection Name="Sungero_Connection" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties" ConnectionStringExpression="[SungeroConnectionString]">
-      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true" CanEdit="true" SelectCommand="${DataSource}">
+      <TableDataSource Name="Table1" Alias="DataSourceNew" DataType="System.Int32" Enabled="true" CanEdit="true" SelectCommand="${DataSourceNew}">
         <Column Name="JobTitle" DataType="System.String" PropName="Column"/>
+        <Column Name="Employee1" DataType="System.String" PropName="Column"/>
         <Column Name="Department" DataType="System.String" PropName="Column"/>
+        <Column Name="BusinessUnit1" DataType="System.String" PropName="Column"/>
         <Column Name="DocumentName" DataType="System.String" PropName="Column"/>
-        <Column Name="SignedResult" DataType="System.Boolean" PropName="Column"/>
-        <CommandParameter Name="ReportSessionId" DataType="16" IsDbType="true" Expression="[ReportSessionId]"/>
+        <Column Name="ApprovalResult" Alias="SignedResult" DataType="System.Boolean" PropName="Column"/>
       </TableDataSource>
     </SungeroSqlDataConnection>
     <SungeroParameter Name="SungeroConnectionString" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties, DontShow" Id="b7a139e1-f2d9-4d58-8627-fd2f93b60fb7" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
-    <SungeroParameter Name="Employees" Id="34d1becb-6091-4729-b568-96c2d00d8f1f" IsRequired="false" IsCollection="true" InternalDataType="Sungero.Company.IEmployee, Sungero.Domain.Interfaces" IsSimpleDataType="false" EntityTypeId="b7905516-2be5-4931-961c-cb38d5677565"/>
+    <SungeroParameter Name="Employee" Id="34d1becb-6091-4729-b568-96c2d00d8f1f" IsRequired="false" IsCollection="false" InternalDataType="Sungero.Company.IEmployee, Sungero.Domain.Interfaces" IsSimpleDataType="false" EntityTypeId="b7905516-2be5-4931-961c-cb38d5677565"/>
     <SungeroParameter Name="StartDate" Id="ec8167f3-d856-4d88-afe0-c6fe734692f8" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
     <SungeroParameter Name="EndDate" Id="e7302df5-4d52-41bf-b757-873f4d421415" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
     <SungeroParameter Name="Signed" Id="780ac600-7f3c-4a15-bd26-f9d7bc030da8" IsRequired="false" IsCollection="false" InternalDataType="System.Boolean" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
@@ -50,15 +51,19 @@ namespace FastReport
     <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"/>
     <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
       <TextObject Name="Text2" Width="94.5" Height="18.9" Text="JobTitle" Font="Arial, 10pt"/>
-      <TextObject Name="Text4" Left="94.5" Width="94.5" Height="18.9" Text="Department" Font="Arial, 10pt"/>
-      <TextObject Name="Text6" Left="189" Width="94.5" Height="18.9" Text="DocumentName" Font="Arial, 10pt"/>
-      <TextObject Name="Text8" Left="283.5" Width="94.5" Height="18.9" Text="SignedResult" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="94.5" Width="94.5" Height="18.9" Text="Employee" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="189" Width="94.5" Height="18.9" Text="Department" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="283.5" Width="94.5" Height="18.9" Text="BusinessUnit" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="378" Width="94.5" Height="18.9" Text="DocumentName" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="472.5" Width="94.5" Height="18.9" Text="ApprovalResult" Font="Arial, 10pt"/>
     </PageHeaderBand>
-    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="Table">
-      <TextObject Name="Text1" Width="94.5" Height="18.9" Text="[Table.JobTitle]" Font="Arial, 10pt"/>
-      <TextObject Name="Text3" Left="94.5" Width="94.5" Height="18.9" Text="[Table.Department]" Font="Arial, 10pt"/>
-      <TextObject Name="Text5" Left="189" Width="94.5" Height="18.9" Text="[Table.DocumentName]" Font="Arial, 10pt"/>
-      <TextObject Name="Text7" Left="283.5" Width="94.5" Height="18.9" Text="[Table.SignedResult]" Format="Boolean" Format.TrueText="+" Format.FalseText="" HorzAlign="Center" Font="Arial, 10pt"/>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="Table1">
+      <TextObject Name="Text1" Width="94.5" Height="56.7" Text="[DataSourceNew.JobTitle]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="94.5" Width="94.5" Height="56.7" Text="[DataSourceNew.Employee]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="189" Width="94.5" Height="56.7" Text="[DataSourceNew.Department]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="283.5" Width="94.5" Height="56.7" Text="[DataSourceNew.BusinessUnit]" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="378" Width="94.5" Height="56.7" Text="[DataSourceNew.DocumentName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="472.5" Width="94.5" Height="56.7" Text="[DataSourceNew.ApprovalResult]" Format="Boolean" Format.TrueText="+" Format.FalseText="" HorzAlign="Center" Font="Arial, 10pt"/>
     </DataBand>
     <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9"/>
   </ReportPage>

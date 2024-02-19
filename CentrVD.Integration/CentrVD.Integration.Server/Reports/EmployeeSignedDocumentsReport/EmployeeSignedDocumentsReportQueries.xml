@@ -6,10 +6,13 @@
   <query key="CreateReportTable">
     <mssql><![CDATA[create table {0}
 ([ReportSessionId] [varchar](256) NULL,
- [JobTitle] [varchar](max) NOT NULL,
- [Department] [varchar](max) NOT NULL,
- [DocumentName] [varchar](max) NOT NULL,
- [SignedResult] [bit] NOT NULL)]]></mssql>
+ [JobTitle] [varchar](max) NULL,
+ [Employee1] [varchar](max) NULL,
+ [Department] [varchar](max) NULL,
+ [BusinessUnit1] [varchar](max) NULL,
+ [DocumentName] [varchar](max) NULL,
+ [DocumentLink1] [varchar](max) NULL,
+ [SignedResult] [bit] NULL)]]></mssql>
     <postgres><![CDATA[CREATE TABLE IF NOT EXISTS {0}
 ([ReportSessionId] varchar(256) NULL,
  [JobTitle] citext NOT NULL,
@@ -18,6 +21,29 @@
  [SignedResult] boolean NOT NULL)]]></postgres>
   </query>
   <query key="InsertIntoReportTable">
-    <default><![CDATA[insert into Sungero_Reports_EmployeeSignedDocumentReportV2(ReportSessionId, JobTitle, Department, DocumentName, SignedResult) values (@ReportSessionId, @JobTitle, @Department, @DocumentName, @SignedResult)]]></default>
+    <default><![CDATA[insert into Sungero_Reports_EmployeeSignedDocumentReportV2(ReportSessionId, JobTitle, Employee, Department, BusinessUnit, DocumentName, DocumentLink, SignedResult) values (@ReportSessionId, @JobTitle, @Employee, @department, @businessUnit, @DocumentName, @documentLink, @SignedResult)]]></default>
+  </query>
+  <query key="DataSourceNew">
+    <mssql><![CDATA[SELECT SignatureType
+	,Sungero_Core_Recipient.Name
+	,Sungero_Company_JobTitle.Name
+	,SigningDate
+	,doc.Name
+	,dep.Name
+	,businessUnit.Name
+FROM Sungero_Core_Sign
+LEFT JOIN Sungero_Core_Recipient
+ON Sungero_Core_Sign.Signatory = Sungero_Core_Recipient.Id
+LEFT JOIN Sungero_Content_EDoc doc
+ON Sungero_Core_Sign.EntityId = doc.Id
+LEFT JOIN Sungero_Company_JobTitle
+ON Sungero_Company_JobTitle.Id = Sungero_Core_Recipient.JobTitle_Company_Sungero
+LEFT JOIN Sungero_Core_Recipient dep
+ON dep.Id = Sungero_Core_Recipient.Department_Company_Sungero
+LEFT JOIN Sungero_Content_EDoc docNOR
+ON docNOR.BusinessUnit_Docflow_Sungero = Sungero_Core_Recipient.Parent
+LEFT JOIN Sungero_Core_Recipient businessUnit
+ON businessUnit.Id = dep.Parent;
+]]></mssql>
   </query>
 </queries>

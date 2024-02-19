@@ -12,11 +12,12 @@ namespace CentrVD.Integration
     public override void BeforeExecute(Sungero.Reporting.Client.BeforeExecuteEventArgs e)
     {
       EmployeeSignedDocumentsReport.ReportSessionId = Guid.NewGuid().ToString();
-      CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTable(EmployeeSignedDocumentsReport.ReportSessionId);
+      CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTableV2(EmployeeSignedDocumentsReport.ReportSessionId);
       
       // Создать диалог с запросом периода дат.
       var dialog = Dialogs.CreateInputDialog("Параметры отчета Сотрудник подписал документы");
-      var employees = dialog.AddSelectMany("Сотудник", false, Sungero.Company.Employees.GetAll().FirstOrDefault());
+      //var employees = dialog.AddSelectMany("Сотудник", false, Sungero.Company.Employees.GetAll().FirstOrDefault());
+      var employee = dialog.AddSelect("Сотудник", false, Sungero.Company.Employees.GetAll().FirstOrDefault());
       var departments = dialog.AddSelectMany("Подразделения", false, Sungero.Company.Departments.GetAll().FirstOrDefault());
       var roles = dialog.AddSelectMany("Роли", false, Sungero.CoreEntities.Roles.GetAll().FirstOrDefault());
       var startDate = dialog.AddDate("Дата от", true , Calendar.Today.AddDays(-30));
@@ -30,6 +31,8 @@ namespace CentrVD.Integration
       // Передать указанные значения в параметры отчета.
       EmployeeSignedDocumentsReport.StartDate = startDate.Value.Value;
       EmployeeSignedDocumentsReport.EndDate = endDate.Value.Value;
+      EmployeeSignedDocumentsReport.Employee = employee.Value;
+      //EmployeeSignedDocumentsReport.
     }
 
   }
