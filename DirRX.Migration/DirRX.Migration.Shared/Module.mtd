@@ -1,0 +1,60 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "ec7d34bd-c87c-4bca-9b8a-151bc1db7266",
+  "Name": "Migration",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "DirRX.Migration.Client",
+  "ClientBaseAssemblyName": "DirRX.Migration.ClientBase",
+  "ClientBaseNamespace": "DirRX.Migration.ClientBase",
+  "ClientNamespace": "DirRX.Migration.Client",
+  "Code": "Migrati",
+  "CompanyCode": "DirRX",
+  "Cover": {
+    "NameGuid": "a90a9691-1807-4ea7-bac5-427d4a5e4eee",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "169014dd-40c9-48f4-b2e2-8b682abbabbb",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "f2e5d189-232a-4bb2-8a8a-bda1d8294bab",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": []
+  },
+  "DesktopViews": [],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "DirRX.Migration",
+  "IsolatedAssemblyName": "DirRX.Migration.Isolated",
+  "IsolatedNamespace": "DirRX.Migration.Isolated",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "DirRX.Migration",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "DirRX.Migration.Server",
+  "ServerNamespace": "DirRX.Migration.Server",
+  "SharedAssemblyName": "DirRX.Migration.Shared",
+  "SharedNamespace": "DirRX.Migration.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.10",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

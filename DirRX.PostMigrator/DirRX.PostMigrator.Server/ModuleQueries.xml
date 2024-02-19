@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queries>
+  <query key="SelectDatabookRecords">
+    <mssql><![CDATA[select distinct
+  databook.Id
+from
+  dbo.{0} databook
+  join dbo.Converter_Reference_Current cur
+  on databook.Discriminator = cur.Discriminator and databook.Id = cur.Id
+where 
+  databook.discriminator = '{1}'
+  and databook.XRecID is not null
+  and (cur.{2} is null or cur.{2} = 0)]]></mssql>
+    <postgres><![CDATA[select distinct
+  databook.id
+from
+  public.{0} databook
+  join public.converter_reference_current cur
+  on databook.discriminator = cur.discriminator and databook.id = cur.id
+where 
+  databook.discriminator = '{1}'
+  and databook.xrecid is not null
+  and (cur.{2} is null or cur.{2} = false)]]></postgres>
+  </query>
+  <query key="SelectMigratedRecipient">
+    <mssql><![CDATA[select distinct
+  rec.Id
+from
+  dbo.Sungero_Core_Recipient rec
+  join dbo.Converter_Reference_Current cur
+  on rec.Discriminator = cur.Discriminator and rec.Id = cur.Id
+where 
+  rec.discriminator = '{0}'
+  and rec.XRecID is not null
+  and (cur.ReSaved is null or cur.ReSaved = 0)]]></mssql>
+    <postgres><![CDATA[select distinct
+  rec.id
+from
+  public.sungero_core_recipient rec
+  join public.converter_reference_current cur
+  on rec.discriminator = cur.discriminator and rec.id = cur.id
+where 
+  rec.discriminator = '{0}'
+  and rec.xrecid is not null
+  and (cur.resaved is null or cur.resaved = false)]]></postgres>
+  </query>
+  <query key="SelectMigratedCounterparty">
+    <mssql><![CDATA[select distinct
+  counterparty.Id
+from
+  dbo.Sungero_Parties_Counterparty counterparty
+  join dbo.Converter_Reference_Current cur
+  on counterparty.Discriminator = cur.Discriminator and counterparty.Id = cur.Id
+where 
+  counterparty.discriminator = '{0}'
+  and counterparty.XRecID is not null
+  and (cur.ReSaved is null or cur.ReSaved = 0)]]></mssql>
+    <postgres><![CDATA[select distinct
+  counterparty.id
+from
+  public.sungero_parties_counterparty counterparty
+  join public.converter_reference_current cur
+  on counterparty.discriminator = cur.discriminator and counterparty.id = cur.id
+where 
+  counterparty.discriminator = '{0}'
+  and counterparty.xrecid is not null
+  and (cur.resaved is null or cur.resaved = false)]]></postgres>
+  </query>
+  <query key="SetDatabookItemStatus">
+    <mssql><![CDATA[update dbo.Converter_Reference_Current
+set 
+  {0} = {1},
+  ReSavedErrorMessage = null
+where 
+  Id in ({2})
+  and Discriminator = '{3}']]></mssql>
+    <postgres><![CDATA[update public.converter_reference_current
+set 
+  {0} = {1},
+  resavederrormessage = null
+where 
+  id in ({2})
+  and discriminator = '{3}']]></postgres>
+  </query>
+  <query key="SetDatabookItemError">
+    <mssql><![CDATA[update dbo.Converter_Reference_Current
+set 
+  {0} = 0,
+  ReSavedErrorMessage = '{1}'
+where 
+  Id = {2}
+  and Discriminator = '{3}']]></mssql>
+    <postgres><![CDATA[update public.converter_reference_current
+set 
+  {0} = false,
+  resavederrormessage = '{1}'
+where 
+  id = {2}
+  and discriminator = '{3}']]></postgres>
+  </query>
+  <query key="SelectCertificates">
+    <mssql><![CDATA[select
+  id 
+from
+  dbo.sungero_core_certificate ce 
+where
+  ce.discriminator = '{0}' 
+  and ce.notafter is null
+  and ce.notbefore is null]]></mssql>
+    <postgres><![CDATA[select
+  id 
+from
+  public.sungero_core_certificate ce 
+where
+  ce.discriminator = '{0}' 
+  and ce.notafter is null
+  and ce.notbefore is null]]></postgres>
+  </query>
+  <query key="GetListIdByDiscriminator">
+    <mssql><![CDATA[select 
+  Id
+from
+  dbo.Converter_Reference_Current
+where Discriminator = '{0}']]></mssql>
+    <postgres><![CDATA[select 
+  id
+from
+  public.converter_reference_current
+where discriminator = '{0}']]></postgres>
+  </query>
+  <query key="GetListCertificates">
+    <mssql><![CDATA[select 
+  Id 
+from 
+  dbo.sungero_core_certificate ce
+where 
+  ce.discriminator = '{0}' 
+  and ce.notafter is null 
+  and ce.notbefore is null]]></mssql>
+    <postgres><![CDATA[select 
+  id 
+from 
+  public.sungero_core_certificate ce
+where 
+  ce.discriminator = '{0}' 
+  and ce.notafter is null 
+  and ce.notbefore is null]]></postgres>
+  </query>
+</queries>

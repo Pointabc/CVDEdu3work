@@ -1,0 +1,290 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "5912ca69-957f-4aad-8cc4-4c1093280296",
+  "Name": "PostMigrator",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "DirRX.PostMigrator.Client",
+  "ClientBaseAssemblyName": "DirRX.PostMigrator.ClientBase",
+  "ClientBaseNamespace": "DirRX.PostMigrator.ClientBase",
+  "ClientNamespace": "DirRX.PostMigrator.Client",
+  "Code": "PostMig",
+  "CompanyCode": "DirRX",
+  "Cover": {
+    "NameGuid": "968fe397-fa7e-472a-b34d-992949320e1b",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "248afd0a-6411-4c42-a84a-3e71d717fdf4",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "4b4985c4-edb8-4b50-ada3-d9b49374d643",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": []
+  },
+  "Dependencies": [
+    {
+      "Id": "ec7d34bd-c87c-4bca-9b8a-151bc1db7266",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "DirRX.PostMigrator",
+  "IsolatedAssemblyName": "DirRX.PostMigrator.Isolated",
+  "IsolatedNamespace": "DirRX.PostMigrator.Isolated",
+  "PublicConstants": [
+    {
+      "Name": "BusinessUnitDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"EFF95720-181F-4F7D-892D-DEC034C7B2AB\")"
+    },
+    {
+      "Name": "CertificateDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"AFA0C3AA-50FF-453E-87A1-39A696F8917B\")"
+    },
+    {
+      "Name": "DepartmentDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"61b1c19f-26e2-49a5-b3d3-0d3618151e12\")"
+    },
+    {
+      "Name": "EmployeeDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"b7905516-2be5-4931-961c-cb38d5677565\")"
+    },
+    {
+      "Name": "LoginDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"55F542E9-4645-4F8D-999E-73CC71DF62FD\")"
+    },
+    {
+      "Name": "PersonDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"f5509cdc-ac0c-4507-a4d3-61d7a0a9b6f6\")"
+    },
+    {
+      "Name": "RegistrationGroupDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"6eddf9a4-bf7b-4cac-961b-a1f0f0bc7ab6\")"
+    },
+    {
+      "Name": "RoleDiscriminator",
+      "ParentClasses": [
+        "Module",
+        "Discriminators"
+      ],
+      "TypeName": "System.Guid",
+      "Value": "new System.Guid(\"5E9B55C2-C1F5-4E4F-AA09-7B6D461D87ED\")"
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "GetIdBusinessUnits",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdCertificates",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdDepartments",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdEmployees",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdLogins",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdPersons",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdRegistrationGroups",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetIdRoles",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessBusinessUnitBlock",
+      "Parameters": [
+        {
+          "Name": "idBusinessUnitsBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessCertificateBlock",
+      "Parameters": [
+        {
+          "Name": "idCertificatesBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessDepartmentBlock",
+      "Parameters": [
+        {
+          "Name": "idDepartmentsBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessEmployeesBlock",
+      "Parameters": [
+        {
+          "Name": "idEmployeesBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessLoginBlock",
+      "Parameters": [
+        {
+          "Name": "idLoginsBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessPersonBlock",
+      "Parameters": [
+        {
+          "Name": "idPersonsBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessRegistrationGroupBlock",
+      "Parameters": [
+        {
+          "Name": "idRegistrationGroupsBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "ProcessRoleBlock",
+      "Parameters": [
+        {
+          "Name": "idRolesBlock",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean",
+      "WebApiRequestType": "Get"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "DirRX.PostMigrator",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "DirRX.PostMigrator.Server",
+  "ServerNamespace": "DirRX.PostMigrator.Server",
+  "SharedAssemblyName": "DirRX.PostMigrator.Shared",
+  "SharedNamespace": "DirRX.PostMigrator.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.10",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
