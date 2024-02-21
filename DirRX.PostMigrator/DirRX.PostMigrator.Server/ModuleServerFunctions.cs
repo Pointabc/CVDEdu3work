@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -31,7 +31,7 @@ namespace DirRX.PostMigrator.Server
       Logger.DebugFormat("Количество обрабатываемых НОР в блоке: {0}", list.Count);
 
       var result = true;
-      var successSaved = new List<long>();
+      var successSaved = new List<int>();
       var businessUnits = Sungero.Company.BusinessUnits.GetAll().Where(p => list.Contains(p.Id));
       foreach (var item in businessUnits)
       {
@@ -77,7 +77,7 @@ namespace DirRX.PostMigrator.Server
       Logger.DebugFormat("Количество обрабатываемых подразделений в блоке: {0}", list.Count);
 
       var result = true;
-      var successSaved = new List<long>();
+      var successSaved = new List<int>();
       var departments = Sungero.Company.Departments.GetAll().Where(p => list.Contains(p.Id));
       foreach (var item in departments)
       {
@@ -124,7 +124,7 @@ namespace DirRX.PostMigrator.Server
       Logger.DebugFormat("Количество обрабатываемых персон в блоке: {0}", list.Count);
 
       var result = true;
-      var successSaved = new List<long>();
+      var successSaved = new List<int>();
       var persons = Sungero.Parties.People.GetAll().Where(p => list.Contains(p.Id));
       foreach (var item in persons)
       {
@@ -170,7 +170,7 @@ namespace DirRX.PostMigrator.Server
 			Logger.Debug(String.Format("Количество обрабатываемых учетных записей в блоке: {0}", list.Count()));
 
 			var result = true;
-			var successSaved = new List<long>();
+			var successSaved = new List<int>();
 			var logins = Sungero.CoreEntities.Logins.GetAll().Where(p => list.Contains(p.Id));
 			logins = logins.Where(x=>x.LoginName != "Administrator");
 			logins = logins.Where(x=>x.LoginName != "Integration Service");
@@ -217,7 +217,7 @@ namespace DirRX.PostMigrator.Server
 			Logger.Debug(String.Format("Количество обрабатываемых ролей в блоке: {0}", list.Count()));
 
 			var result = true;
-			var successSaved = new List<long>();
+			var successSaved = new List<int>();
 			var roles = Sungero.CoreEntities.Roles.GetAll().Where(p => list.Contains(p.Id));
 			roles = roles.Where(x => x.IsSystem != true);
 			foreach (var item in roles)
@@ -262,7 +262,7 @@ namespace DirRX.PostMigrator.Server
       Logger.DebugFormat("Количество обрабатываемых сотрудников в блоке: {0}", list.Count);
 
       var result = true;
-      var successSaved = new List<long>();
+      var successSaved = new List<int>();
       var employees = Sungero.Company.Employees.GetAll().Where(p => list.Contains(p.Id));
       foreach (var item in employees)
       {
@@ -307,7 +307,7 @@ namespace DirRX.PostMigrator.Server
 			Logger.Debug(String.Format("Количество обрабатываемых групп регистрации в блоке: {0}", list.Count()));
 
 			var result = true;
-			var successSaved = new List<long>();
+			var successSaved = new List<int>();
 			var registrationGroups = Sungero.Docflow.RegistrationGroups.GetAll().Where(p => list.Contains(p.Id));
 			foreach (var item in registrationGroups)
 			{
@@ -350,23 +350,21 @@ namespace DirRX.PostMigrator.Server
 			Logger.Debug(String.Format("Количество обрабатываемых цифровых сертификатов в блоке: {0}", list.Count()));
 
 			var result = true;
-			var successSaved = new List<long>();
+			var successSaved = new List<int>();
 			var certificates = Sungero.CoreEntities.Certificates.GetAll().Where(p => list.Contains(p.Id));
 			foreach (var item in certificates)
 			{
-			  try
-				{
-			    var x509Certificate = new X509Certificate2(item.X509Certificate);
-			    
-  				item.Issuer = x509Certificate.GetNameInfo(X509NameType.SimpleName, true);
-  				item.NotAfter = x509Certificate.NotAfter;
-  				item.NotBefore = x509Certificate.NotBefore;
-  				item.Subject = x509Certificate.GetNameInfo(X509NameType.SimpleName, false);
-  				item.Thumbprint = x509Certificate.Thumbprint;
-  				
-  				if (!item.Enabled.HasValue)
-  					item.Enabled = item.NotAfter.HasValue && item.NotAfter.Value > Calendar.Now;
+				var x509Certificate = new X509Certificate2(item.X509Certificate);
+				item.Issuer = x509Certificate.GetNameInfo(X509NameType.SimpleName, true);
+				item.NotAfter = x509Certificate.NotAfter;
+				item.NotBefore = x509Certificate.NotBefore;
+				item.Subject = x509Certificate.GetNameInfo(X509NameType.SimpleName, false);
+				item.Thumbprint = x509Certificate.Thumbprint;
+				if (!item.Enabled.HasValue)
+					item.Enabled = item.NotAfter.HasValue && item.NotAfter.Value > Calendar.Now;
 				
+				try
+				{
 					item.Save();
 					successSaved.Add(item.Id);
 				}
@@ -391,13 +389,13 @@ namespace DirRX.PostMigrator.Server
     /// <param name="text">Строка.</param>
     /// <param name="separator">Разделитель.</param>
     /// <returns>Список элементов строки.</returns>
-    private static List<long> ConvertStringToIntList(string text, string separator)
+    private static List<int> ConvertStringToIntList(string text, string separator)
     {
       if (string.IsNullOrWhiteSpace(text))
-        return new List<long>();
+        return new List<int>();
       else
       {
-        return text.Split(separator.ToCharArray()).Select(long.Parse).ToList();
+        return text.Split(separator.ToCharArray()).Select(int.Parse).ToList();
       }
     }
 
@@ -407,9 +405,9 @@ namespace DirRX.PostMigrator.Server
     /// <param name="list">Список.</param>
     /// <param name="separator">Разделитель.</param>
     /// <returns>Список элементов строки.</returns>
-    private static string ConvertListToString(List<long> list, string separator)
+    private static string ConvertListToString(List<int> list, string separator)
     {
-      return string.Join<long>(separator, list);
+      return string.Join<int>(separator, list);
     }
     
     /// <summary>
@@ -419,7 +417,7 @@ namespace DirRX.PostMigrator.Server
     /// <param name="status">Статус.</param>
     /// <param name="discriminator">Дискриминатор сущности.</param>
     /// <param name="column">Столбец статуса.</param>
-    private static void SetDatabookItemStatus(List<long> itemIdList, bool status, string discriminator, string column)
+    private static void SetDatabookItemStatus(List<int> itemIdList, bool status, string discriminator, string column)
     {
       if (itemIdList.Count > 0)
       {
@@ -437,7 +435,7 @@ namespace DirRX.PostMigrator.Server
     /// <param name="errorMessage">Текс ошибки.</param>
     /// <param name="discriminator">Дискриминатор сущности.</param>
     /// <param name="column">Столбец статуса.</param>
-    private static void SetDatabookItemError(long itemId, string errorMessage, string discriminator, string column)
+    private static void SetDatabookItemError(int itemId, string errorMessage, string discriminator, string column)
     {
       
       var args = new object[] {column, errorMessage, itemId, discriminator};
@@ -450,7 +448,7 @@ namespace DirRX.PostMigrator.Server
     /// </summary>
     /// <param name="list">Список.</param>
     /// <returns>Строка SQL списка.</returns>
-    public static string ConvertListToSqlList(List<long> list)
+    public static string ConvertListToSqlList(List<int> list)
     {
       var count = list.Count;
       var result = string.Empty;
@@ -479,7 +477,7 @@ namespace DirRX.PostMigrator.Server
     /// Получить список ИД из временной таблицы миграции по дискриминатору.
     /// </summary>
     /// <param name="commandText">Константу с дискриминатором сущности.</param>
-    private static List<long> GetListIdByDiscriminator(string discriminator)
+    private static List<int> GetListIdByDiscriminator(string discriminator)
     {
       var commandText = string.Format(Queries.Module.GetListIdByDiscriminator, discriminator);
       return ExecuteSQLSelect(commandText);
@@ -489,7 +487,7 @@ namespace DirRX.PostMigrator.Server
     /// Получить список ИД мигрированных сертификатов.
     /// </summary>
     /// <param name="commandText">Константу с дискриминатором сущности.</param>
-    private static List<long> GetListCertificates(string discriminator)
+    private static List<int> GetListCertificates(string discriminator)
     {
       var commandText = string.Format(Queries.Module.GetListCertificates, discriminator);
       return ExecuteSQLSelect(commandText);
@@ -500,16 +498,16 @@ namespace DirRX.PostMigrator.Server
     /// </summary>
     /// <param name="query">Селект на выборку данных</param>
     /// <returns>Список занчений полученный в запросе.</returns>
-    private static List<long> ExecuteSQLSelect(string query)
+    private static List<int> ExecuteSQLSelect(string query)
     {
-      var listResult = new List<long>();
+      var listResult = new List<int>();
       using (var command = SQL.GetCurrentConnection().CreateCommand())
       {
         command.CommandText = query;
         using (var reader = command.ExecuteReader())
         {
           while (reader.Read())
-            listResult.Add(reader.GetInt64(0));
+            listResult.Add(reader.GetInt32(0));
         }
       }
       return listResult;
