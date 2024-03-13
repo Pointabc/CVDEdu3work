@@ -260,6 +260,21 @@
           "Name": "reportSessionId",
           "ParameterType": "global::System.String",
           "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "usersAndGroups",
+          "ParameterType": "global::System.Collections.Generic.List<global::Sungero.CoreEntities.IRecipient>",
+          "ParameterTypeFullName": "System.Collections.Generic.List"
+        },
+        {
+          "Name": "agreedApproved",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "isSignCert",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
         }
       ],
       "ReturnType": "void",

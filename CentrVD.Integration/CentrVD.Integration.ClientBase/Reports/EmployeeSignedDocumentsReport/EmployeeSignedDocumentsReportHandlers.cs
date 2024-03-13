@@ -12,7 +12,7 @@ namespace CentrVD.Integration
     public override void BeforeExecute(Sungero.Reporting.Client.BeforeExecuteEventArgs e)
     {
       EmployeeSignedDocumentsReport.ReportSessionId = Guid.NewGuid().ToString();
-      CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTableV2(EmployeeSignedDocumentsReport.ReportSessionId);
+      CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTableV2(EmployeeSignedDocumentsReport.ReportSessionId, null, "", false);
       
       // Создать диалог с запросом периода дат.
       var dialog = Dialogs.CreateInputDialog("Параметры отчета Сотрудник подписал документы");

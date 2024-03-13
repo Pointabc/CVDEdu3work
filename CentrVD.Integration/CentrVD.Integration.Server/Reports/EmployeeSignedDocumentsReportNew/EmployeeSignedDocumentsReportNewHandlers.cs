@@ -14,12 +14,13 @@ namespace CentrVD.Integration
       //var reportSessionId = System.Guid.NewGuid().ToString();
       //EmployeeSignedDocumentsReportNew.ReportSessionId = reportSessionId;
       
-      EmployeeSignedDocumentsReportNew.ReportSessionId = Guid.NewGuid().ToString();
-      CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTableV2(EmployeeSignedDocumentsReportNew.ReportSessionId);
+      // Тут заполняем таблицу Sungero_Reports_EmployeeSignedDocumentReportV2 данными из запроса
+      //EmployeeSignedDocumentsReportNew.ReportSessionId = Guid.NewGuid().ToString();
+      //CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTableV2(EmployeeSignedDocumentsReportNew.ReportSessionId);
       
       // Тут заполняем таблицу Sungero_Reports_EmployeeSignedDocumentReportV2 данными из запроса
-      //Functions.Module.ExecuteSQLCommandFormat(Queries.EmployeeSignedDocumentsReportNew.InsertIntoEmployeeTable,
-      //                                         new object[] { Constants.EmployeeSignedDocumentsReportNew.SourceTableNameVersionV2, reportSessionId });
+      //Sungero.Docflow.PublicFunctions.Module.ExecuteSQLCommandFormat(Queries.EmployeeSignedDocumentsReportNew.InsertIntoEmployeeTable,
+      //                                                               new object[] { Constants.EmployeeSignedDocumentsReportNew.SourceTableNameVersionV2, reportSessionId });
       
     }
 

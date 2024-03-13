@@ -9,13 +9,8 @@
  [BusinessUnit1] [nvarchar](max) NULL,
  [DocumentName] [nvarchar](max) NULL,
  [DocumentLink1] [nvarchar](max) NULL,
- [SignedResult] [int] NULL)]]></mssql>
-    <postgres><![CDATA[CREATE TABLE IF NOT EXISTS {0}
-([ReportSessionId] varchar(256) NULL,
- [JobTitle] citext NOT NULL,
- [Department] citext NOT NULL,
- [DocumentName] citext NOT NULL,
- [SignedResult] boolean NOT NULL)]]></postgres>
+ [SignedResult] [nvarchar](max) NULL,
+ [DateSign] [datetime] NULL)]]></mssql>
   </query>
   <query key="DataSourceNew">
     <mssql><![CDATA[SELECT Sungero_Company_JobTitle.Name as JobTitle
@@ -25,6 +20,8 @@
   ,doc.Name as DocumentName
   ,SignatureType as SignedResult
 	,SigningDate as SigningDate
+	,EntityId as DocumentId
+  ,DataSignature as DataSignature
 FROM Sungero_Core_Sign
 LEFT JOIN Sungero_Core_Recipient
 ON Sungero_Core_Sign.Signatory = Sungero_Core_Recipient.Id
@@ -41,5 +38,13 @@ ON businessUnit.Id = dep.Parent;]]></mssql>
   </query>
   <query key="InsertIntoEmployeeTable">
     <mssql><![CDATA[insert into Sungero_Reports_EmployeeSignedDocumentReportV2(ReportSessionId, JobTitle, Employee1, Department, BusinessUnit1, DocumentName, DocumentLink1, SignedResult) values (@ReportSessionId, @JobTitle, @Employee1, @Department, @BusinessUnit1, @BusinessUnit1, @DocumentName, @DocumentLink1, @SignedResult)]]></mssql>
+  </query>
+  <query key="QueryFromTable">
+    <default><![CDATA[select * from Sungero_Reports_EmployeeSignedDocumentReportV2]]></default>
+  </query>
+  <query key="DS">
+    <mssql><![CDATA[select ReportSessionId, JobTitle, Employee1, DateSign, DocumentName, SignedResult, DocumentLink1, Department, BusinessUnit1 
+from Sungero_Reports_EmployeeSignedDocumentReportV2 
+where ReportSessionId = @ReportSessionId and DateSign >= @StartDate and DateSign <= @EndDate]]></mssql>
   </query>
 </queries>

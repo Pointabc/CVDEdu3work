@@ -27,12 +27,28 @@
   ],
   "Parameters": [
     {
-      "NameGuid": "553a66f1-dc06-440e-94b1-0244c6111aa5",
+      "NameGuid": "7b811350-9511-4f7e-98b1-98f6bc5d6332",
       "Name": "ReportSessionId",
       "InternalDataTypeName": "System.String"
+    },
+    {
+      "NameGuid": "33365ccc-388a-476f-bdf6-325e9b30486b",
+      "Name": "StartDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "07fb078a-4713-450c-9943-72bc3026d86a",
+      "Name": "EndDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
     }
   ],
   "PublicStructures": [],
-  "ResourcesKeys": [],
+  "ResourcesKeys": [
+    "ValueIsNotSet",
+    "Approved",
+    "Agreed"
+  ],
   "Versions": []
 }

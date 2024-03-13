@@ -14,6 +14,8 @@ namespace CentrVD.Integration.Server
     {
       var allUsers = Roles.AllUsers;
       Reports.AccessRights.Grant(Sungero.Docflow.Reports.GetApprovalRulesConsolidatedReport().Info, allUsers, DefaultReportAccessRightsTypes.Execute);
+      //var role = Roles.GetAll(r => r.Sid == roleGuid).FirstOrDefault();
+      //role.
       
       CreateReportsTables();
     }
