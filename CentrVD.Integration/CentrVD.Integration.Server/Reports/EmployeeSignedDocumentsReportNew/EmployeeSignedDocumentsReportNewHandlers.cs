@@ -27,7 +27,7 @@ namespace CentrVD.Integration
     public override void AfterExecute(Sungero.Reporting.Server.AfterExecuteEventArgs e)
     {
       // TODO VS Восстановить после отладки
-      //Sungero.Docflow.PublicFunctions.Module.DeleteReportData(Constants.EmployeeSignedDocumentsReport.SourceTableName, EmployeeSignedDocumentsReport.ReportSessionId);
+      Sungero.Docflow.PublicFunctions.Module.DeleteReportData(Constants.EmployeeSignedDocumentsReportNew.SourceTableNameVersionV2, EmployeeSignedDocumentsReportNew.ReportSessionId);
     }
   }
 
