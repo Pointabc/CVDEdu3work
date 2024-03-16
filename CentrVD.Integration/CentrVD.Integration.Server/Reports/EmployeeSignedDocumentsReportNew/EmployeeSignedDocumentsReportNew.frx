@@ -44,11 +44,23 @@ namespace FastReport
         <CommandParameter Name="StartDate" DataType="6" IsDbType="true" Expression="[StartDate]"/>
         <CommandParameter Name="EndDate" DataType="6" IsDbType="true" Expression="[EndDate]"/>
       </TableDataSource>
+      <TableDataSource Name="Table1" Alias="TableV2" DataType="System.Int32" Enabled="true" CanEdit="true" SelectCommand="${DS_UseOnlyQvery}">
+        <Column Name="JobTitle" DataType="System.String" PropName="Column"/>
+        <Column Name="Department" DataType="System.String" PropName="Column"/>
+        <Column Name="BusinessUnit1" DataType="System.String" PropName="Column"/>
+        <Column Name="DocumentName" DataType="System.String" PropName="Column"/>
+        <Column Name="DocumentLink1" DataType="System.String" PropName="Column"/>
+        <Column Name="SignedResult" DataType="System.String" PropName="Column"/>
+        <Column Name="Employee1" DataType="System.String" PropName="Column"/>
+        <CommandParameter Name="ReportSessionId" DataType="16" IsDbType="true" Expression="[RecipientsIds]"/>
+        <CommandParameter Name="RecipientsIds" DataType="16" IsDbType="true" Expression="[RecipientsIds]"/>
+      </TableDataSource>
     </SungeroSqlDataConnection>
     <SungeroParameter Name="SungeroConnectionString" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties, DontShow" Id="b7a139e1-f2d9-4d58-8627-fd2f93b60fb7" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
     <SungeroParameter Name="ReportSessionId" Id="7b811350-9511-4f7e-98b1-98f6bc5d6332" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
     <SungeroParameter Name="StartDate" Id="33365ccc-388a-476f-bdf6-325e9b30486b" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
     <SungeroParameter Name="EndDate" Id="07fb078a-4713-450c-9943-72bc3026d86a" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="RecipientsIds" Id="5e6aaa3e-75b0-432c-8275-330166cb16a9" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
   </Dictionary>
   <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Watermark.Font="Arial, 60pt">
     <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="47.25">
@@ -71,19 +83,16 @@ namespace FastReport
     <GroupHeaderBand Name="GroupHeader1" Top="83.6" Width="1047.06" Height="37.8" Condition="[TableNew.Employee1]">
       <TextObject Name="Text3" Left="94.5" Width="954.45" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.Employee1]" VertAlign="Center" Font="Arial, 10pt"/>
       <TextObject Name="Text4" Width="94.5" Height="37.8" Border.Lines="All" Fill.Color="WhiteSmoke" Text="Сотрудник" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
-      <DataBand Name="Data1" Top="125.4" Width="1047.06" Height="66.15" CanGrow="true" CanShrink="true" DataSource="Table">
+      <DataBand Name="Data1" Top="125.4" Width="1047.06" Height="151.2" CanGrow="true" CanShrink="true" DataSource="Table1">
         <TextObject Name="Text1" Width="94.5" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.JobTitle]" Font="Arial, 10pt, style=Bold"/>
         <TextObject Name="Text6" Left="340.2" Width="189" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.DocumentName]" Font="Arial, 10pt"/>
         <TextObject Name="Text12" Left="529.2" Width="425.25" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.DocumentLink1]" WordWrap="false" Font="Arial, 10pt" TextFill.Color="RoyalBlue"/>
         <TextObject Name="Text7" Left="94.5" Width="122.85" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.Department]" Font="Arial, 10pt"/>
         <TextObject Name="Text14" Left="217.35" Width="122.85" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.BusinessUnit1]" Font="Arial, 10pt"/>
         <TextObject Name="Text5" Left="954.45" Width="94.5" Height="37.8" Border.Lines="All" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[TableNew.SignedResult]" HorzAlign="Center" Font="Arial, 10pt"/>
-        <Sort>
-          <Sort Expression="[TableNew.Employee1]"/>
-        </Sort>
       </DataBand>
-      <GroupFooterBand Name="GroupFooter1" Top="195.55" Width="1047.06" Height="37.8"/>
+      <GroupFooterBand Name="GroupFooter1" Top="280.6" Width="1047.06" Height="37.8"/>
     </GroupHeaderBand>
-    <PageFooterBand Name="PageFooter1" Top="237.35" Width="1047.06" Height="18.9"/>
+    <PageFooterBand Name="PageFooter1" Top="322.4" Width="1047.06" Height="18.9"/>
   </ReportPage>
 </Report>

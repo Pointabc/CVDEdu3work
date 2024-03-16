@@ -42,6 +42,11 @@
       "Name": "EndDate",
       "InternalDataTypeName": "System.DateTime",
       "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "5e6aaa3e-75b0-432c-8275-330166cb16a9",
+      "Name": "RecipientsIds",
+      "InternalDataTypeName": "System.String"
     }
   ],
   "PublicStructures": [],

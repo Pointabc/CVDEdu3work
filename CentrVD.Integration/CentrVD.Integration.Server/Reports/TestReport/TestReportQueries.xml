@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <queries>
   <query key="DataSource">
-    <default><![CDATA[select [EmployeeName], [ReportSessionId] from Sungero_Reports_TestReport]]></default>
+    <default><![CDATA[select * from Sungero_Reports_TestReport where ReportSessionId = @ReportSessionId]]></default>
   </query>
   <query key="CreateTestReportTable">
     <default><![CDATA[create table {0}
 ([ReportSessionId] [varchar](256) NULL,
- [EmployeeName] [varchar](max) NOT NULL)]]></default>
-  </query>
-  <query key="InsertIntoTestReportTable">
-    <default><![CDATA[insert into Sungero_Reports_TestReport(ReportSessionId, EmployeeName) values (@reportSessionId, @employeeName)]]></default>
+ [JobTitle] [nvarchar](max) NULL,
+ [Employee] [nvarchar](max) NULL,
+ [Department] [nvarchar](max) NULL,
+ [BusinessUnit] [nvarchar](max) NULL,
+ [DocumentName] [nvarchar](max) NULL,
+ [DocumentLink] [nvarchar](max) NULL,
+ [SignedResult] [nvarchar](max) NULL,
+ [DateSign] [datetime] NULL)]]></default>
   </query>
 </queries>

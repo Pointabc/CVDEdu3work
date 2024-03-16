@@ -27,7 +27,7 @@
         "CoverActionPresenterTypeName": "Sungero.Reporting.Client.CoverReportActionPresenter, Sungero.Reporting.Client",
         "GroupId": "b9cd9caa-9c8a-4565-beb6-61c2d94690f0",
         "PreviousItemGuid": "68d5997a-a9c3-430a-a559-aa88d8f3308c",
-        "ReportId": "7753877a-340d-4026-a18d-a05f548974ce"
+        "ReportId": "a603a100-17ff-4d7f-aaaa-7315e58eb08c"
       },
       {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
@@ -213,6 +213,18 @@
       "WebApiRequestType": "Post"
     },
     {
+      "Name": "GetEmployeesIdsForQuery",
+      "Parameters": [
+        {
+          "Name": "usersAndGroups",
+          "ParameterType": "global::System.Collections.Generic.List<global::Sungero.CoreEntities.IRecipient>",
+          "ParameterTypeFullName": "System.Collections.Generic.List"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
+    },
+    {
       "Name": "GrantRights",
       "Parameters": [
         {
@@ -224,18 +236,6 @@
           "Name": "rightType",
           "ParameterType": "global::System.Guid",
           "ParameterTypeFullName": "System.Guid"
-        }
-      ],
-      "ReturnType": "void",
-      "ReturnTypeFullName": "System.Void"
-    },
-    {
-      "Name": "UpdateApprovalSheetReportTable",
-      "Parameters": [
-        {
-          "Name": "reportSessionId",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
         }
       ],
       "ReturnType": "void",
@@ -275,6 +275,45 @@
           "Name": "isSignCert",
           "ParameterType": "global::System.Boolean",
           "ParameterTypeFullName": "System.Boolean"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "UpdateEmployeeSignedDocumentReportTableV3",
+      "Parameters": [
+        {
+          "Name": "reportSessionId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "usersAndGroups",
+          "ParameterType": "global::System.Collections.Generic.List<global::Sungero.CoreEntities.IRecipient>",
+          "ParameterTypeFullName": "System.Collections.Generic.List"
+        },
+        {
+          "Name": "agreedApproved",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "isSignCert",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "UpdateEmployeesSignedDocumentReportTable",
+      "Parameters": [
+        {
+          "Name": "reportSessionId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
         }
       ],
       "ReturnType": "void",

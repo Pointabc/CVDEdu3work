@@ -28,11 +28,12 @@ namespace CentrVD.Integration.Server
     {
       var reportTableName = CentrVD.Integration.Constants.EmployeeSignedDocumentsReportNew.SourceTableNameVersionV2;
       var testReportTableName = CentrVD.Integration.Constants.EmployeeSignedDocumentsReport.TestSourceTableName;
+      var reportTableNameVersion3 = CentrVD.Integration.Constants.EmployeeSignedDocumentsReport.TestSourceTableName;
       
-      Sungero.Docflow.PublicFunctions.Module.DropReportTempTables(new[] { reportTableName, testReportTableName });
+      Sungero.Docflow.PublicFunctions.Module.DropReportTempTables(new[] { reportTableName, testReportTableName, reportTableNameVersion3 });
       
       Sungero.Docflow.PublicFunctions.Module.ExecuteSQLCommandFormat(CentrVD.Integration.Queries.EmployeeSignedDocumentsReportNew.CreateReportTable, new[] { reportTableName });
-      Sungero.Docflow.PublicFunctions.Module.ExecuteSQLCommandFormat(CentrVD.Integration.Queries.TestReport.CreateTestReportTable, new[] { testReportTableName });
+      Sungero.Docflow.PublicFunctions.Module.ExecuteSQLCommandFormat(CentrVD.Integration.Queries.TestReport.CreateTestReportTable, new[] { reportTableNameVersion3 });
     }
     #endregion
     

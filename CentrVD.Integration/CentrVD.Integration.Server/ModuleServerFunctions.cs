@@ -8,7 +8,112 @@ namespace CentrVD.Integration.Server
 {
   public class ModuleFunctions
   {
+    
+    /// <summary>
+    /// Получить строку содержащую массив Id сострудников для параметра отчета
+    /// </summary>
+    [Public]
+    public static string GetEmployeesIdsForQuery(List<IRecipient> usersAndGroups)
+    {
+      // Получаем всех сотрудников из подр, НОР, ролей и тд
+      var users = new List<long>();
+      foreach (var recipient in usersAndGroups)
+      {
+        if (!Groups.Is(recipient))
+          users.Add(recipient.Id);
+        else
+        {
+          var group = Groups.As(recipient);
+          var groupMembers = Groups.GetAllUsersInGroup(group)
+            .Where(r => Sungero.Company.Employees.Is(r) && r.Status == Sungero.CoreEntities.DatabookEntry.Status.Active)
+            .Select(r => Recipients.As(r).Id);
+          users.AddRange(groupMembers);
+        }
+      }
 
+      return string.Format("{0}", string.Join(",", users));
+    }
+    
+    /// <summary>
+    /// Заполнить SQL таблицу для формирования отчета "Сотрудник подписал документы".
+    /// </summary>
+    /// <param name="reportSessionId">Идентификатор отчета.</param>
+    [Public]
+    public static void UpdateEmployeeSignedDocumentReportTableV3(string reportSessionId, List<IRecipient> usersAndGroups, string agreedApproved, bool isSignCert)
+    {
+      // Получаем всех сотрудников из подр, НОР, ролей и тд
+      var users = new List<IRecipient>();
+      foreach (var recipient in usersAndGroups)
+      {
+        if (!Groups.Is(recipient))
+          users.Add(recipient);
+        else
+        {
+          var group = Groups.As(recipient);
+          var groupMembers = Groups.GetAllUsersInGroup(group)
+            .Where(r => Sungero.Company.Employees.Is(r) && r.Status == Sungero.CoreEntities.DatabookEntry.Status.Active)
+            .Select(r => Recipients.As(r));
+          users.AddRange(groupMembers);
+        }
+      }
+      
+      var documents = Sungero.Docflow.OfficialDocuments.GetAll().ToList().Where(d => Signatures.Get(d).Any());
+      
+      var table = new List<Structures.TestReport.Record>();
+      
+      foreach(var document in documents)
+      {
+        var sign = Sungero.Core.Signatures.Get(document).Where(s => s.SignCertificate != null).FirstOrDefault();
+        if (sign == null && isSignCert)
+          continue;
+        var signatures = agreedApproved == CentrVD.Integration.Reports.Resources.TestReport.ValueIsNotSet
+          ? Signatures.Get(document)
+          : agreedApproved == CentrVD.Integration.Reports.Resources.TestReport.Approved
+          ? Signatures.Get(document).Where(s => s.SignatureType == SignatureType.Approval)
+          : Signatures.Get(document).Where(s => s.SignatureType == SignatureType.Endorsing);
+        
+        if (signatures.FirstOrDefault() == null)
+          continue;
+        
+        var tableLine = new Structures.TestReport.Record();
+        var signature = signatures.FirstOrDefault();
+        tableLine.ReportSessionId = reportSessionId;
+        var employee = GetDocumentLastApprover(document, signature.SignatureType); //signature != null ? Sungero.Company.Employees.As(signature.Signatory) : document.OurSignatory;
+        tableLine.JobTitle = employee.JobTitle.DisplayValue;
+        tableLine.Employee = employee.Person.ShortName;
+        tableLine.Department = employee.Department.DisplayValue;
+        tableLine.BusinessUnit = employee.Department.BusinessUnit.DisplayValue;
+        tableLine.DocumentName = document.Name;
+        tableLine.DocumentLink = Sungero.Core.Hyperlinks.Get(document);
+        // локализовать тип подписи
+        
+        tableLine.SignedResult = signature.SignatureType == SignatureType.Approval
+          ? CentrVD.Integration.Reports.Resources.TestReport.Approved
+          : signature.SignatureType == SignatureType.Endorsing
+          ? CentrVD.Integration.Reports.Resources.TestReport.Agreed
+          : "Не согласовано";
+        
+        table.Add(tableLine);
+      }
+      
+      // Записываем структуру в таблицу
+      Sungero.Docflow.PublicFunctions.Module.WriteStructuresToTable(Constants.TestReport.TestSourceTableName, table);
+    }
+    
+    /// <summary>
+    /// Найти сотрудника, который утвердил документ.
+    /// </summary>
+    /// <param name="document">Документ.</param>
+    /// <returns>Подписывающий.</returns>
+    public static Sungero.Company.IEmployee GetDocumentLastApprover(Sungero.Docflow.IOfficialDocument document, Sungero.Core.SignatureType signatureType)
+    {
+      return Sungero.Company.Employees.As(Signatures.Get(document.LastVersion)
+                                          .Where(s => s.SignatureType == signatureType)
+                                          .OrderByDescending(s => s.SigningDate)
+                                          .Select(s => s.Signatory)
+                                          .FirstOrDefault());
+    }
+    
     /// <summary>
     /// Заполнить SQL таблицу для формирования отчета "Сотрудник подписал документы".
     /// </summary>
@@ -66,7 +171,7 @@ namespace CentrVD.Integration.Server
             var v4 = reader.GetString(4); // DocName
             var v5 = reader.GetInt32(5); // Signed Result
             var v7 = reader.GetDateTime(6); // DateSign
-           
+            
             //var v9 = reader.GetBytes(8); // DateSign
             
             var tableLine = new Structures.EmployeeSignedDocumentsReportNew.Record();
@@ -134,14 +239,15 @@ namespace CentrVD.Integration.Server
     }
     
     /// <summary>
-    /// Заполнить SQL таблицу для формирования отчета "Лист согласования".
+    /// Заполнить SQL таблицу для формирования отчета "Сотрудник подписал документы".
     /// </summary>
-    /// <param name="document">Документ.</param>
+    /// <param name="document">ID сессии отчета</param>
     /// <param name="reportSessionId">Идентификатор отчета.</param>
     [Public]
-    public static void UpdateApprovalSheetReportTable(string reportSessionId)
+    public static void UpdateEmployeesSignedDocumentReportTable(string reportSessionId)
     {
-      var commandText = CentrVD.Integration.Queries.TestReport.InsertIntoTestReportTable;
+      
+      /*var commandText = CentrVD.Integration.Queries.TestReport.InsertIntoTestReportTable;
       
       using (var command = SQL.GetCurrentConnection().CreateCommand())
       {
@@ -154,13 +260,13 @@ namespace CentrVD.Integration.Server
         var comment = Docflow.Functions.Module.HasApproveWithSuggestionsMark(signature.Comment)
           ? Docflow.Functions.Module.RemoveApproveWithSuggestionsMark(signature.Comment)
           : signature.Comment;*/
-        var employeeName = "Вася";
+      /*var employeeName = "Вася";
         command.CommandText = commandText;
         SQL.AddParameter(command, "@reportSessionId",  reportSessionId, System.Data.DbType.String);
         SQL.AddParameter(command, "@employeeName",  employeeName, System.Data.DbType.String);
         
         command.ExecuteNonQuery();
-      }
+      }*/
     }
 
     /// <summary>

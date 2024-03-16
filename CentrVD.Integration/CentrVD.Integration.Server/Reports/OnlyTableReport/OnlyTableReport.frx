@@ -30,32 +30,45 @@ namespace FastReport
   </ScriptText>
   <Dictionary>
     <SungeroSqlDataConnection Name="Sungero_Connection" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties" ConnectionStringExpression="[SungeroConnectionString]">
-      <TableDataSource Name="Sungero_Core_ActiveUser" DataType="System.Int32" Enabled="true" TableName="Sungero_Core_ActiveUser">
-        <Column Name="Id" DataType="System.Int64"/>
-        <Column Name="Status" DataType="System.String"/>
-        <Column Name="LoginName" DataType="System.String"/>
-        <Column Name="UserName" DataType="System.String"/>
-        <Column Name="LastActivity" DataType="System.DateTime"/>
+      <TableDataSource Name="Table" Alias="TableFromQuery" DataType="System.Int32" Enabled="true" CanEdit="true" SelectCommand="${DS_From_Query}">
+        <Column Name="JobTitle" DataType="System.String" PropName="Column"/>
+        <Column Name="Employee" DataType="System.String" PropName="Column1"/>
+        <Column Name="SignedResult" DataType="System.Int32" PropName="Column"/>
+        <Column Name="BusinessUnit" DataType="System.String" PropName="Column"/>
+        <Column Name="DocumentName" DataType="System.String" PropName="Column"/>
+        <Column Name="SignRes" DataType="System.String" PropName="Column"/>
+        <Column Name="SigningDate" DataType="System.DateTime" PropName="Column"/>
+        <Column Name="EmpId" DataType="System.Int64" PropName="Column"/>
+        <CommandParameter Name="StartDate" DataType="6" IsDbType="true" Expression="[StartDate]"/>
+        <CommandParameter Name="EndDate" DataType="6" IsDbType="true" Expression="[EndDate]"/>
+        <CommandParameter Name="RecipientsIds" DataType="16" IsDbType="true" Expression="[RecipientsIds]"/>
       </TableDataSource>
     </SungeroSqlDataConnection>
     <SungeroParameter Name="SungeroConnectionString" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties, DontShow" Id="5dfd5be2-4348-4978-8404-1c03bfb6a01a" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="StartDate" Id="c785c12d-6322-40fb-a5ed-0bc6cb2da970" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="EndDate" Id="2f874ff1-3224-40a5-84f6-381fdf8b4c5c" IsRequired="false" IsCollection="false" InternalDataType="System.DateTime" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="RecipientsIds" Id="04df127e-0cf5-4f0b-91a2-c5694777dfd5" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
   </Dictionary>
-  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"/>
-    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
-      <TextObject Name="Text2" Left="94.5" Width="94.5" Height="18.9" Text="Status" Font="Arial, 10pt"/>
-      <TextObject Name="Text4" Width="94.5" Height="18.9" Text="Id" Font="Arial, 10pt"/>
-      <TextObject Name="Text6" Left="189" Width="94.5" Height="18.9" Text="LoginName" Font="Arial, 10pt"/>
-      <TextObject Name="Text8" Left="283.5" Width="94.5" Height="18.9" Text="UserName" Font="Arial, 10pt"/>
-      <TextObject Name="Text10" Left="378" Width="94.5" Height="18.9" Text="LastActivity" Font="Arial, 10pt"/>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="37.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="1047.06" Height="28.35">
+      <TextObject Name="Text2" Width="103.95" Height="18.9" Text="JobTitle" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="94.5" Width="245.7" Height="18.9" Text="Employee" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="954.45" Width="94.5" Height="18.9" Text="SignedResult" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="340.2" Width="141.75" Height="18.9" Text="BusinessUnit" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="481.95" Width="189" Height="18.9" Text="DocumentName" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="859.95" Width="94.5" Height="18.9" Text="SignRes" Font="Arial, 10pt"/>
+      <TextObject Name="Text14" Left="670.95" Width="94.5" Height="18.9" Text="EmpId" Font="Arial, 10pt"/>
     </PageHeaderBand>
-    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6">
-      <TextObject Name="Text1" Left="94.5" Width="94.5" Height="18.9" Text="[Sungero_Core_ActiveUser.Status]" Font="Arial, 10pt"/>
-      <TextObject Name="Text3" Width="94.5" Height="18.9" Text="[Sungero_Core_ActiveUser.Id]" Font="Arial, 10pt"/>
-      <TextObject Name="Text5" Left="189" Width="94.5" Height="18.9" Text="[Sungero_Core_ActiveUser.LoginName]" Font="Arial, 10pt"/>
-      <TextObject Name="Text7" Left="283.5" Width="94.5" Height="18.9" Text="[Sungero_Core_ActiveUser.UserName]" Font="Arial, 10pt"/>
-      <TextObject Name="Text9" Left="378" Width="94.5" Height="18.9" Text="[Sungero_Core_ActiveUser.LastActivity]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+    <DataBand Name="Data1" Top="74.15" Width="1047.06" Height="75.6" DataSource="Table">
+      <TextObject Name="Text1" Width="103.95" Height="18.9" GrowToBottom="true" Text="[TableFromQuery.JobTitle]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="94.5" Width="245.7" Height="18.9" GrowToBottom="true" Text="[TableFromQuery.Employee]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="954.45" Width="94.5" Height="18.9" GrowToBottom="true" Text="[TableFromQuery.SignedResult]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="340.2" Width="141.75" Height="18.9" GrowToBottom="true" Text="[TableFromQuery.BusinessUnit]" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="481.95" Width="189" Height="18.9" GrowToBottom="true" Text="[TableFromQuery.DocumentName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="859.95" Width="94.5" Height="18.9" Text="[TableFromQuery.SignRes]" Font="Arial, 10pt"/>
+      <TextObject Name="Text13" Left="670.95" Width="94.5" Height="18.9" Text="[TableFromQuery.EmpId]" Font="Arial, 10pt"/>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9"/>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="1047.06" Height="18.9"/>
   </ReportPage>
 </Report>

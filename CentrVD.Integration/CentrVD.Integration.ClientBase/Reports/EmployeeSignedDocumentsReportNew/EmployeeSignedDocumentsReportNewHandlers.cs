@@ -30,6 +30,7 @@ namespace CentrVD.Integration
       // Передать указанные значения в параметры отчета.
       EmployeeSignedDocumentsReportNew.StartDate = startDate.Value.Value;
       EmployeeSignedDocumentsReportNew.EndDate = endDate.Value.Value;
+      EmployeeSignedDocumentsReportNew.RecipientsIds = CentrVD.Integration.PublicFunctions.Module.GetEmployeesIdsForQuery(recipients.Value.ToList());
       
       EmployeeSignedDocumentsReportNew.ReportSessionId = Guid.NewGuid().ToString();
       var authors = new List<IRecipient>();

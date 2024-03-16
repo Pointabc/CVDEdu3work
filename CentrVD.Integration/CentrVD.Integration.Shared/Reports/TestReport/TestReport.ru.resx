@@ -58,4 +58,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ValueIsNotSet" xml:space="preserve">
+    <value>Значение не установлено</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Утверждено</value>
+  </data>
+  <data name="Agreed" xml:space="preserve">
+    <value>Согласовано</value>
+  </data>
 </root>

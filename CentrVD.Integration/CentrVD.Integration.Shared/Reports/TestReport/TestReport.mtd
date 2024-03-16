@@ -31,11 +31,22 @@
     },
     {
       "NameGuid": "db3c3e04-6ddf-4fb0-8dd4-994a97c12ab2",
-      "Name": "Employee",
-      "InternalDataTypeName": "System.String"
+      "Name": "StartDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "1e02ffac-2374-4ad0-aeb4-d50ea7d244ee",
+      "Name": "EndDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
     }
   ],
   "PublicStructures": [],
-  "ResourcesKeys": [],
+  "ResourcesKeys": [
+    "ValueIsNotSet",
+    "Approved",
+    "Agreed"
+  ],
   "Versions": []
 }

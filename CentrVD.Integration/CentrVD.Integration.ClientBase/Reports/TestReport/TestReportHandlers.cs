@@ -11,27 +11,32 @@ namespace CentrVD.Integration
 
     public override void BeforeExecute(Sungero.Reporting.Client.BeforeExecuteEventArgs e)
     {
-      TestReport.ReportSessionId = Guid.NewGuid().ToString();
-      CentrVD.Integration.PublicFunctions.Module.UpdateApprovalSheetReportTable(TestReport.ReportSessionId);
-      
-      TestReport.ReportSessionId = TestReport.ReportSessionId;
-      TestReport.Employee = Users.Current.DisplayValue; 
-      
       // Создать диалог с запросом периода дат.
-      /*var dialog = Dialogs.CreateInputDialog("Параметры отчета Сотрудник подписал документы");
-      var employees = dialog.AddSelectMany("Сотудник", false, Sungero.Company.Employees.GetAll().FirstOrDefault());
-      var departments = dialog.AddSelectMany("Подразделения", false, Sungero.Company.Departments.GetAll().FirstOrDefault());
-      var roles = dialog.AddSelectMany("Роли", false, Sungero.CoreEntities.Roles.GetAll().FirstOrDefault());
-      var startDate = dialog.AddDate("Дата от", true , Calendar.Today.AddDays(-30));
+      var dialog = Dialogs.CreateInputDialog("Параметры отчета Сотрудник подписал документы");
+      // TODO Показывает не все записи
+      var recipients = dialog.AddSelectMany("Автор", false,  Sungero.CoreEntities.Recipients.GetAll().FirstOrDefault());
+      var startDate = dialog.AddDate("Дата от", true , Calendar.Today.AddDays(-90));
       var endDate = dialog.AddDate("Дата no", true, Calendar.Today);
-      dialog.AddHyperlink("Статус");
-      var isSign = dialog.AddBoolean("Подписан с использованием сертификата");
+      List<string> list = new List<string>() { CentrVD.Integration.Reports.Resources.TestReport.ValueIsNotSet,
+        CentrVD.Integration.Reports.Resources.TestReport.Approved,
+        CentrVD.Integration.Reports.Resources.TestReport.Agreed };
+      var agreedApproved = dialog.AddSelect("Согласовано/Утверждено", true, 0).From(list.ToArray());
+      var isSignCert = dialog.AddBoolean("Подписан с использованием сертификата");
       
       if (dialog.Show() != DialogButtons.Ok)
-        e.Cancel = true;*/
+        e.Cancel = true;
+      
       // Передать указанные значения в параметры отчета.
-      //RequestReport.startDate = startDate.Value.Value;
-      //RequestReport.endDate = endDate.Value.Value;
+      TestReport.StartDate = startDate.Value.Value;
+      TestReport.EndDate = endDate.Value.Value;
+      //TestReport.SignedResult = agreedApproved.Value;
+      //TestReport.RecipientsIds = CentrVD.Integration.PublicFunctions.Module.GetEmployeesIdsForQuery(recipients.Value.ToList());
+      
+      TestReport.ReportSessionId = Guid.NewGuid().ToString();
+      var authors = new List<IRecipient>();
+      authors.AddRange(recipients.Value);
+      CentrVD.Integration.PublicFunctions.Module.UpdateEmployeeSignedDocumentReportTableV3(TestReport.ReportSessionId,
+                                                                                           authors, agreedApproved.Value, isSignCert.Value.Value);
     }
 
   }

@@ -1,3 +1,35 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <queries>
+  <query key="Query">
+    <mssql><![CDATA[select Id, Name from Sungero_Content_EDoc]]></mssql>
+  </query>
+  <query key="DS_From_Query">
+    <mssql><![CDATA[SELECT Sungero_Company_JobTitle.Name as JobTitle,
+  Sungero_Core_Recipient.Name as Employee,
+  dep.Name as Department,
+  businessUnit.Name as BusinessUnit,
+  doc.Name as DocumentName,
+  SignatureType as SignedResult,
+  case SignatureType
+    when 0 then 'Согласовано'
+	when 1 then 'Утверждено'
+  end as SignRes,
+	SigningDate as SigningDate,
+	EntityId as DocumentId,
+	Sungero_Core_Recipient.Id as EmpId
+FROM Sungero_Core_Sign
+LEFT JOIN Sungero_Core_Recipient
+ON Sungero_Core_Sign.Signatory = Sungero_Core_Recipient.Id
+LEFT JOIN Sungero_Content_EDoc doc
+ON Sungero_Core_Sign.EntityId = doc.Id
+LEFT JOIN Sungero_Company_JobTitle
+ON Sungero_Company_JobTitle.Id = Sungero_Core_Recipient.JobTitle_Company_Sungero
+LEFT JOIN Sungero_Core_Recipient dep
+ON dep.Id = Sungero_Core_Recipient.Department_Company_Sungero
+LEFT JOIN Sungero_Content_EDoc docNOR
+ON docNOR.BusinessUnit_Docflow_Sungero = Sungero_Core_Recipient.Parent
+LEFT JOIN Sungero_Core_Recipient businessUnit
+ON businessUnit.Id = dep.Parent
+where Sungero_Core_Recipient.Id in (select value from string_split(@RecipientsIds, ',')) and SigningDate >= @StartDate and SigningDate <= @EndDate;]]></mssql>
+  </query>
 </queries>

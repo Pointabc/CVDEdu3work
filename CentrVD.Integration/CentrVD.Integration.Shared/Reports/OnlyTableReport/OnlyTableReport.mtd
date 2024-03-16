@@ -9,13 +9,36 @@
   "ExportFormats": [
     "Pdf"
   ],
+  "HandledEvents": [
+    "BeforeExecuteClient"
+  ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "IntegrationOnlyTableReport",
   "Overridden": [
     "PublicConstants",
-    "PublicStructures"
+    "PublicStructures",
+    "Parameters",
+    "HandledEvents"
   ],
-  "Parameters": [],
+  "Parameters": [
+    {
+      "NameGuid": "c785c12d-6322-40fb-a5ed-0bc6cb2da970",
+      "Name": "StartDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "2f874ff1-3224-40a5-84f6-381fdf8b4c5c",
+      "Name": "EndDate",
+      "InternalDataTypeName": "System.DateTime",
+      "IsSimpleDataType": true
+    },
+    {
+      "NameGuid": "04df127e-0cf5-4f0b-91a2-c5694777dfd5",
+      "Name": "RecipientsIds",
+      "InternalDataTypeName": "System.String"
+    }
+  ],
   "PublicStructures": [],
   "ResourcesKeys": [],
   "Versions": []
