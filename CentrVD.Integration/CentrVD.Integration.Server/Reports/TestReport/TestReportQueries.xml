@@ -15,4 +15,14 @@
  [SignedResult] [nvarchar](max) NULL,
  [DateSign] [datetime] NULL)]]></default>
   </query>
+  <query key="DS_GetDocuments">
+    <mssql><![CDATA[SELECT [EntityId]
+	,[SignatureType]
+	,[Signatory]
+	,[SigningDate]
+	,doc.Name
+FROM [RX48].[dbo].[Sungero_Core_Sign]
+LEFT JOIN [RX48].[dbo].[Sungero_Content_EDoc] doc
+ON Sungero_Core_Sign.EntityId = doc.Id]]></mssql>
+  </query>
 </queries>

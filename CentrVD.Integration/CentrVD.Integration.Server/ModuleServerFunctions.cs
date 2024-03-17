@@ -39,7 +39,7 @@ namespace CentrVD.Integration.Server
     /// </summary>
     /// <param name="reportSessionId">Идентификатор отчета.</param>
     [Public]
-    public static void UpdateEmployeeSignedDocumentReportTableV3(string reportSessionId, List<IRecipient> usersAndGroups, string agreedApproved, bool isSignCert)
+    public static void UpdateEmployeeSignedDocumentReportTableV3(string reportSessionId, List<IRecipient> usersAndGroups, string agreedApproved, bool isSignCert, DateTime? startDate, DateTime? endDate)
     {
       // Получаем всех сотрудников из подр, НОР, ролей и тд
       var users = new List<IRecipient>();
@@ -57,11 +57,29 @@ namespace CentrVD.Integration.Server
         }
       }
       
-      var documents = Sungero.Docflow.OfficialDocuments.GetAll().ToList().Where(d => Signatures.Get(d).Any());
+      var docs = new List<Sungero.Docflow.IOfficialDocument>();
+      var commandText = CentrVD.Integration.Queries.TestReport.DS_GetDocuments;
+      using (var command = SQL.CreateConnection().CreateCommand())
+      {
+        command.CommandText = commandText;
+        //SQL.AddParameter(command, "@StartDate",  startDate, System.Data.DbType.DateTime);
+        //SQL.AddParameter(command, "@EndDate",  endDate, System.Data.DbType.DateTime);
+        using(System.Data.IDataReader reader = command.ExecuteReader())
+        {
+          while (reader.Read())
+          {
+            docs.Add(Sungero.Docflow.OfficialDocuments.Get(reader.GetInt64(0)));
+          }
+        }
+      }
+      
+      var d111 = docs.Count;
+      //var documents = Sungero.Docflow.OfficialDocuments.GetAll().ToList().Where(d => Signatures.Get(d).Any());
       
       var table = new List<Structures.TestReport.Record>();
       
-      foreach(var document in documents)
+      //foreach(var document in documents)
+      foreach(var document in docs)
       {
         var sign = Sungero.Core.Signatures.Get(document).Where(s => s.SignCertificate != null).FirstOrDefault();
         if (sign == null && isSignCert)
@@ -77,8 +95,14 @@ namespace CentrVD.Integration.Server
         
         var tableLine = new Structures.TestReport.Record();
         var signature = signatures.FirstOrDefault();
+        var d1 = startDate.Value;
+        var d2 = endDate.Value;
+        if (signature.SigningDate <= startDate.Value || signature.SigningDate >= endDate.Value)
+          continue;
         tableLine.ReportSessionId = reportSessionId;
-        var employee = GetDocumentLastApprover(document, signature.SignatureType); //signature != null ? Sungero.Company.Employees.As(signature.Signatory) : document.OurSignatory;
+        var employee = GetDocumentLastApprover(document, signature.SignatureType);
+        if (!users.Contains(employee))
+          continue;
         tableLine.JobTitle = employee.JobTitle.DisplayValue;
         tableLine.Employee = employee.Person.ShortName;
         tableLine.Department = employee.Department.DisplayValue;
@@ -86,7 +110,6 @@ namespace CentrVD.Integration.Server
         tableLine.DocumentName = document.Name;
         tableLine.DocumentLink = Sungero.Core.Hyperlinks.Get(document);
         // локализовать тип подписи
-        
         tableLine.SignedResult = signature.SignatureType == SignatureType.Approval
           ? CentrVD.Integration.Reports.Resources.TestReport.Approved
           : signature.SignatureType == SignatureType.Endorsing
