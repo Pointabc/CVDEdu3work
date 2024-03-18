@@ -3,6 +3,16 @@
   "NameGuid": "5e45fb1c-6c50-4d76-94e3-1f7e84619b0b",
   "Name": "Meeting",
   "AccessRightsMode": "Both",
+  "Actions": [
+    {
+      "NameGuid": "fc7fb7c1-c6a9-48e4-b5e4-6ac474e49328",
+      "Name": "AddObserver",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_AddObserver_large_fc7fb7c1c6a948e4b5e46ac474e49328.png",
+      "SmallIconName": "Action_AddObserver_small_fc7fb7c1c6a948e4b5e46ac474e49328.png"
+    }
+  ],
   "BaseGuid": "dbc0dd63-4d23-4f41-92ae-cab59bb70c8c",
   "CanBeNavigationPropertyType": true,
   "CreationAreaMetadata": {
@@ -25,7 +35,88 @@
       "$type": "Sungero.Metadata.StandaloneFormMetadata, Sungero.Metadata",
       "NameGuid": "fd229789-a1ab-4fd2-a52d-1e04ce2ab3f9",
       "Name": "Card",
-      "Controls": [],
+      "Controls": [
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
+          "Name": "Members",
+          "GroupType": "WithTitleNoBorder",
+          "IsAncestorMetadata": true,
+          "Overridden": [
+            "Controls"
+          ],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "c491106b-f185-43c0-b57a-0decf3a2703a",
+          "Name": "Secretary",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+          "ParentGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
+          "PropertyGuid": "1a9d3323-7957-4e3b-af0c-c0be647a56ae",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "754ae620-bcc5-482d-81e2-ae4b5efe8740",
+          "Name": "President",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+          "ParentGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
+          "PropertyGuid": "8d3a3598-e7d7-4eff-a528-d8773aee284e",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": [],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "d0bca50f-3fc5-4165-9c02-ff3971f33968",
+          "Name": "Members",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiLikeEditorToCollectionBinder",
+          "ParentGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
+          "PropertyGuid": "876c9202-9efd-4a8c-b46b-ce9d132c7230",
+          "RowNumber": 2,
+          "RowSpan": 1,
+          "Settings": [
+            {
+              "Name": "NavigationPropertyGuid",
+              "Value": "c6e9e44e-de68-41b4-ba8d-5423eeebda18"
+            },
+            {
+              "Name": "IsDuplicatesAllowed",
+              "Value": false
+            }
+          ],
+          "Versions": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "0b86b3f9-79df-490b-b16f-d23295e207cf",
+          "Name": "Observers",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiLikeEditorToCollectionBinder",
+          "ParentGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
+          "PropertyGuid": "f3631896-b920-4f62-9546-1cc1a991546f",
+          "RowNumber": 3,
+          "RowSpan": 1,
+          "Settings": [
+            {
+              "Name": "NavigationPropertyGuid",
+              "Value": "7dfe583f-773a-4098-a106-8df073bcb1da"
+            }
+          ]
+        }
+      ],
       "IsAncestorMetadata": true,
       "Overridden": [
         "SettingsResourceKey"
@@ -50,6 +141,77 @@
         "EntityGuid"
       ],
       "Versions": []
+    },
+    {
+      "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "f3631896-b920-4f62-9546-1cc1a991546f",
+      "Name": "Observers",
+      "Code": "MeetingObserve",
+      "EntityGuid": "00d0ef6f-c573-4833-ae6d-b0768794bb0c",
+      "IsShowedInList": false,
+      "PreviousPropertyGuid": "587f0c3a-212a-4f0d-8fec-e9dafc8ad7d5"
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "GetMeetingObserversString",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "meeting",
+          "ParameterType": "global::CentrVD.Category3.IMeeting",
+          "ParameterTypeFullName": "CentrVD.Category3.IMeeting, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "onlyObservers",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
+        },
+        {
+          "Name": "withJobTitle",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
+    },
+    {
+      "Name": "SetAccessRightsOnDocumentToObservers",
+      "Parameters": [
+        {
+          "Name": "meeting",
+          "ParameterType": "global::CentrVD.Category3.IMeeting",
+          "ParameterTypeFullName": "CentrVD.Category3.IMeeting, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "document",
+          "ParameterType": "global::Sungero.Content.IElectronicDocument",
+          "ParameterTypeFullName": "Sungero.Content.IElectronicDocument, Sungero.Content.Shared"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "SetRecipientToObservers",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "meeting",
+          "ParameterType": "global::CentrVD.Category3.IMeeting",
+          "ParameterTypeFullName": "CentrVD.Category3.IMeeting, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "recipient",
+          "ParameterType": "global::Sungero.CoreEntities.IRecipient",
+          "ParameterTypeFullName": "Sungero.CoreEntities.IRecipient, Sungero.Domain.Shared"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
     }
   ],
   "PublicStructures": [],
@@ -58,7 +220,17 @@
     "NameGuid": "bddb1e98-4f03-4c57-acd9-8ca2b9da7b91",
     "Name": "RibbonCard",
     "Categories": [],
-    "Elements": [],
+    "Elements": [
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "94941684-9560-4d9c-8d5c-364235ca41f6",
+        "Name": "AddObservers",
+        "ActionGuid": "fc7fb7c1-c6a9-48e4-b5e4-6ac474e49328",
+        "ButtonSize": "Large",
+        "Index": 1,
+        "ParentGuid": "3385d2ee-5007-4c6a-bb2f-87da08213605"
+      }
+    ],
     "Groups": [],
     "IsAncestorMetadata": true,
     "Pages": [],

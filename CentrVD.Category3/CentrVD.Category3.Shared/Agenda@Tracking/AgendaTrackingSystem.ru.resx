@@ -58,36 +58,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Resource_c491106bf18543c0b57a0decf3a2703a" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Control_c491106bf18543c0b57a0decf3a2703a_EmptyText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Resource_754ae620bcc5482d81e2ae4b5efe8740" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Control_754ae620bcc5482d81e2ae4b5efe8740_EmptyText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Resource_d0bca50f3fc541659c02ff3971f33968" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Control_d0bca50f3fc541659c02ff3971f33968_EmptyText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Property_Observers" xml:space="preserve">
-    <value>Наблюдатели</value>
-  </data>
-  <data name="Action_AddObserver" xml:space="preserve">
-    <value>Добавить наблюдателей</value>
-  </data>
-  <data name="Action_AddObserverHint" xml:space="preserve">
-    <value>Добавить наблюдателей совещания</value>
-  </data>
-  <data name="Action_AddObserverDescription" xml:space="preserve">
-    <value>Массовое заполнение наблюдателей на заседаниях от ролей, отделов и других групп.
-
-Сотрудники, уже указанные в качестве наблюдателей, не будут добавлены.</value>
-  </data>
 </root>

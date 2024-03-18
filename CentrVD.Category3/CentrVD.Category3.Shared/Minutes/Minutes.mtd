@@ -1,0 +1,118 @@
+{
+  "$type": "Sungero.Metadata.DocumentMetadata, Sungero.Content.Shared",
+  "NameGuid": "b09eb4d9-62e8-4dcb-99b3-fa00233311ad",
+  "Name": "Minutes",
+  "AccessRightsMode": "Both",
+  "BaseGuid": "bb4780ff-b2c3-4044-a390-e9e110791bf6",
+  "CanBeNavigationPropertyType": true,
+  "ConverterFunctions": [
+    {
+      "Name": "GetMeetingObserversFullMinutes",
+      "DisplayNameResourceCode": "GetMeetingObservers",
+      "IsConverter": true,
+      "Parameters": [
+        {
+          "Name": "minutes",
+          "ParameterType": "global::CentrVD.Category3.IMinutes",
+          "ParameterTypeFullName": "CentrVD.Category3.IMinutes, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
+    },
+    {
+      "Name": "GetMeetingObserversWithJobTitle",
+      "DisplayNameResourceCode": "GetMeetingObserversWithJobTitle",
+      "IsConverter": true,
+      "Parameters": [
+        {
+          "Name": "minutes",
+          "ParameterType": "global::CentrVD.Category3.IMinutes",
+          "ParameterTypeFullName": "CentrVD.Category3.IMinutes, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
+    }
+  ],
+  "CreationAreaMetadata": {
+    "NameGuid": "01403d88-dd86-41ff-aa3b-40002653507a",
+    "Name": "CreationArea",
+    "Buttons": [],
+    "IsAncestorMetadata": true,
+    "Versions": []
+  },
+  "ExtraSearchProperties": [],
+  "FilterPanel": {
+    "NameGuid": "80d3ce1a-9a72-443a-8b6c-6c6eef0c8d0f",
+    "Name": "FilterPanel",
+    "Controls": [],
+    "IsAncestorMetadata": true,
+    "Versions": []
+  },
+  "HandledEvents": [
+    "SavingServer"
+  ],
+  "IconResourcesKeys": [],
+  "LayeredFromGuid": "bb4780ff-b2c3-4044-a390-e9e110791bf6",
+  "OpenCardByDefaultInCollection": true,
+  "OperationsClass": "",
+  "Properties": [
+    {
+      "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "56cbe741-880f-4e6f-9567-343d08494b59",
+      "Name": "Versions",
+      "EntityGuid": "799de9ad-44c0-403c-8232-6b8473db5a0e",
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "EntityGuid"
+      ],
+      "Versions": []
+    },
+    {
+      "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "15280407-331e-42f6-b263-041a495b66cd",
+      "Name": "Tracking",
+      "EntityGuid": "c4246e30-b44b-42df-b489-888bf3a5a598",
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "EntityGuid"
+      ],
+      "Versions": []
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [
+    "GetMeetingObserversWithJobTitle",
+    "GetMeetingObservers"
+  ],
+  "RibbonCardMetadata": {
+    "NameGuid": "402918d1-48ea-411c-be9d-38c5a7b89707",
+    "Name": "RibbonCard",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": [],
+    "RibbonKind": "Card"
+  },
+  "RibbonCollectionMetadata": {
+    "NameGuid": "96a6d1aa-5547-400b-bf2f-42f26c179f01",
+    "Name": "RibbonCollection",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": []
+  },
+  "Versions": [
+    {
+      "Type": "DocumentMetadata",
+      "Number": 2
+    },
+    {
+      "Type": "EntityMetadata",
+      "Number": 12
+    }
+  ]
+}
