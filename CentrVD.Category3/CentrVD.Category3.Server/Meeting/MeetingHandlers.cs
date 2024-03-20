@@ -7,6 +7,17 @@ using CentrVD.Category3.Meeting;
 
 namespace CentrVD.Category3
 {
+  partial class MeetingObserversObserverPropertyFilteringServerHandler<T>
+  {
+
+    public virtual IQueryable<T> ObserversObserverFiltering(IQueryable<T> query, Sungero.Domain.PropertyFilteringEventArgs e)
+    {
+      return query.Where(r => !Sungero.Company.BusinessUnits.Is(r) && !Equals(r, Roles.AllUsers));
+    }
+  }
+
+
+
   partial class MeetingServerHandlers
   {
 

@@ -61,4 +61,19 @@
   <data name="Property_Test" xml:space="preserve">
     <value>Test</value>
   </data>
+  <data name="Action_AddStampOnPublicVersion" xml:space="preserve">
+    <value>Add stamp on public version</value>
+  </data>
+  <data name="Action_AddStampOnPublicVersionDescription" xml:space="preserve">
+    <value>Add stamp on public version</value>
+  </data>
+  <data name="Action_AddStampOnPublicVersionHint" xml:space="preserve">
+    <value>Add stamp on public version</value>
+  </data>
+  <data name="Action_AddStampOnPublicVersionConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_AddStampOnPublicVersionConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
 </root>

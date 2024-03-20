@@ -215,7 +215,11 @@
     }
   ],
   "PublicStructures": [],
-  "ResourcesKeys": [],
+  "ResourcesKeys": [
+    "NewParticipantsAdded",
+    "ObserversAlreadyEntered",
+    "ObserversAlreadyEntered1"
+  ],
   "RibbonCardMetadata": {
     "NameGuid": "bddb1e98-4f03-4c57-acd9-8ca2b9da7b91",
     "Name": "RibbonCard",

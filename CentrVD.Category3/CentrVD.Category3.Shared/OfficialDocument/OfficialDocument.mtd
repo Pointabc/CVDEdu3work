@@ -77,6 +77,41 @@
       "Versions": []
     }
   ],
+  "PublicFunctions": [
+    {
+      "Name": "ConvertToPdfAndAddSignatureMark",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "officialDocument",
+          "ParameterType": "global::CentrVD.Category3.IOfficialDocument",
+          "ParameterTypeFullName": "CentrVD.Category3.IOfficialDocument, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "isSignatureMark",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "MyConvertToPdfWithSignatureMark",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "officialDocument",
+          "ParameterType": "global::CentrVD.Category3.IOfficialDocument",
+          "ParameterTypeFullName": "CentrVD.Category3.IOfficialDocument, Sungero.Domain.Interfaces"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    }
+  ],
   "PublicStructures": [],
   "ResourcesKeys": [],
   "RibbonCardMetadata": {

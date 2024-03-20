@@ -21,8 +21,8 @@ namespace CentrVD.Category3.Client
       // Если были выбраны новые участники, то показать всплывающее сообщение с результатами выбора.
       if (observer != null)
         if (observersCount == _obj.Observers.Count)
-          Sungero.Core.Dialogs.NotifyMessage(Sungero.Meetings.Meetings.Resources.MembersAlreadyEntered);
-        else Sungero.Core.Dialogs.NotifyMessage(Sungero.Meetings.Meetings.Resources.NewMembersAdded);
+          Sungero.Core.Dialogs.NotifyMessage(CentrVD.Category3.Meetings.Resources.ObserversAlreadyEntered);
+        else Sungero.Core.Dialogs.NotifyMessage(CentrVD.Category3.Meetings.Resources.ObserversAlreadyEntered);
     }
 
     public virtual bool CanAddObserver(Sungero.Domain.Client.CanExecuteActionArgs e)

@@ -58,4 +58,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NewParticipantsAdded" xml:space="preserve">
+    <value>Новые наблюдатели добавлены.</value>
+  </data>
+  <data name="ObserversAlreadyEntered" xml:space="preserve">
+    <value>Наблюдатели уже добавлены.</value>
+  </data>
+  <data name="ObserversAlreadyEntered1" xml:space="preserve">
+    <value>Наблюдатели были добавлены ранее.</value>
+  </data>
 </root>

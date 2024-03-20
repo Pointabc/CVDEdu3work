@@ -3,6 +3,16 @@
   "NameGuid": "a8692d85-1312-4219-8172-358b9ef2a72b",
   "Name": "IncomingDocument",
   "AccessRightsMode": "Both",
+  "Actions": [
+    {
+      "NameGuid": "27acb892-f73e-48f8-bab0-ea28b0e860e0",
+      "Name": "AddStampOnPublicVersion",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_AddStampOnPublicVersion_large_27acb892f73e48f8bab0ea28b0e860e0.png",
+      "SmallIconName": "Action_AddStampOnPublicVersion_small_27acb892f73e48f8bab0ea28b0e860e0.png"
+    }
+  ],
   "BaseGuid": "4e7bf176-40b2-4e5d-b10b-af81ad7c62c3",
   "CanBeNavigationPropertyType": true,
   "CreationAreaMetadata": {
@@ -20,6 +30,19 @@
     "IsAncestorMetadata": true,
     "Versions": []
   },
+  "Forms": [
+    {
+      "$type": "Sungero.Metadata.StandaloneFormMetadata, Sungero.Metadata",
+      "NameGuid": "fa03f748-4397-42ef-bdc2-22119af7bf7f",
+      "Name": "Card",
+      "Controls": [],
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "SettingsResourceKey"
+      ],
+      "Versions": []
+    }
+  ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "IntegrationIncomingDocument",
   "OpenCardByDefaultInCollection": true,
@@ -72,7 +95,16 @@
     "NameGuid": "2af37d06-1ee3-4373-a9c1-baeb78c12a52",
     "Name": "RibbonCard",
     "Categories": [],
-    "Elements": [],
+    "Elements": [
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "8b75e298-58c7-471a-a3bd-e445df311429",
+        "Name": "AddStampOnPublicVersion",
+        "ActionGuid": "27acb892-f73e-48f8-bab0-ea28b0e860e0",
+        "Index": 6,
+        "ParentGuid": "7aa0ac24-8039-4d94-9542-84c3d878412e"
+      }
+    ],
     "Groups": [],
     "IsAncestorMetadata": true,
     "Pages": [],

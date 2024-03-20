@@ -61,4 +61,13 @@
   <data name="Property_Test" xml:space="preserve">
     <value>Тест</value>
   </data>
+  <data name="Action_AddStampOnPublicVersion" xml:space="preserve">
+    <value>Добавить штамп на публичную версию документа</value>
+  </data>
+  <data name="Action_AddStampOnPublicVersionHint" xml:space="preserve">
+    <value>Добавить штамп на публичную версию документа</value>
+  </data>
+  <data name="Action_AddStampOnPublicVersionDescription" xml:space="preserve">
+    <value>Добавить штамп на публичную версию документа</value>
+  </data>
 </root>

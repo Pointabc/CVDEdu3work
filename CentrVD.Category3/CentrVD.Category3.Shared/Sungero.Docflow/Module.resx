@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HtmlStampTemplateForCertificateCustom" xml:space="preserve">
+    <value>&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;style type="text/css"&gt;
+.box1 {
+padding: 3px;
+border: 1px solid #d7d7d7;
+border-color: #9400D3;
+}
+
+.tg1{font-size:6pt;font-family:Arial, "Segoe UI", Consolas, Calibri, monospace;line-height:6pt;color:#9400D3}
+.tg2{font-size:8.25pt;font-family:Arial, "Segoe UI", Consolas, Calibri, monospace;text-align:center;line-height:9.75pt;color: #9400D3}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body style="margin: 0"&gt;
+&lt;table class="box1"&gt;
+&lt;colgroup&gt;
+&lt;col width = 31&gt;
+&lt;col width = 137&gt;
+&lt;/colgroup&gt;
+&lt;tr&gt;
+&lt;td width = 32 height = 39 align = "right"&gt;
+  &lt;img width = 27 src = "data:{Изображение}"/&gt;
+&lt;/td&gt;
+&lt;td&gt;  
+  &lt;div class="tg2" style="margin-left:7.5px;margin-right:3.75px"&gt;ДОКУМЕНТ ПОДПИСАН&lt;br&gt;ЭЛЕКТРОННОЙ ПОДПИСЬЮ&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2" style="white-space: nowrap"&gt;
+  &lt;span class="tg1"&gt;Сертификат {Thumbprint}&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2"&gt;
+  &lt;span class="tg1"&gt;Владелец &lt;b&gt;{SignatoryFullName}&lt;/b&gt;&lt;/span&gt;
+&lt;/td&gt;  
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2"&gt;
+  &lt;span class="tg1"&gt;Действителен {Validity}&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2"&gt;
+  &lt;span class="tg1"&gt;Дата подписания {SigningDate}&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="HtmlStampTemplateForSignatureCustom" xml:space="preserve">
+    <value>&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;style type="text/css"&gt;
+.box1 {
+padding: 3px;
+border: 1px solid #d7d7d7;
+border-color: #9400D3
+}
+
+.tg1{font-size:6pt;font-family:Arial, "Segoe UI", Consolas, Calibri, monospace;line-height:6pt;color: #9400D3}
+.tg2{font-size:8.25pt;font-family:Arial, "Segoe UI", Consolas, Calibri, monospace;text-align:center;line-height:9.75pt;color: #9400D3}
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="margin: 0"&gt;
+
+&lt;table class="box1"&gt;
+&lt;colgroup&gt;
+&lt;col width = 31.5&gt;
+&lt;col width = 136&gt;
+&lt;/colgroup&gt;
+&lt;tr&gt;
+&lt;td width = 31.5 height = 39 align = "right"&gt;
+  &lt;img width = 27 src = "data:{Изображение}"/&gt;
+&lt;/td&gt;
+&lt;td&gt;  
+  &lt;div class="tg2" style="margin-left:7.5px;margin-right:3.75px"&gt;ДОКУМЕНТ ПОДПИСАН&lt;br&gt;ЭЛЕКТРОННОЙ ПОДПИСЬЮ&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2"&gt;
+  &lt;span class="tg1"&gt;Документ подписал &lt;b&gt;{SignatoryFullName}&lt;/b&gt;&lt;/span&gt;
+&lt;/td&gt;  
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2"&gt;
+  &lt;span class="tg1"&gt;ИД пользователя {SignatoryId}&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan="2"&gt;
+  &lt;span class="tg1"&gt;Дата подписания {SigningDate}&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACQSURBVHgB3VJLDkAwEO34nIcjYMPShRBu4Ca2NjgCN3AOQqmkybShbWIjXtI0nXnvTTsdQl4CTIlB0VI5NpQxWMQQjMwW7K5/Hmced1QVsJjtYdZ51FobsN2UbusoGGDiHbC4z6PpLHjFjZ4gi3FOa/Ak5rfVGlBYAiyWe+XoDIYqqVV542/8sYHQRNU0fhcHxv47NQurgvMAAAAASUVORK5CYII=</value>
+  </data>
+  <data name="SignatureStampSampleLogo" xml:space="preserve">
+    <value>R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1hLnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7</value>
+  </data>
+  <data name="Stamp" xml:space="preserve">
+    <value>&lt;head&gt;
+&lt;style type="text/css"&gt;
+.box1 {
+  border-radius: 4px;
+  padding-left: 0px;
+  padding-right: 7px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: 1px solid #d7d7d7;
+  border-color: #003f75;
+  width: 75mm;
+  height: 23mm;
+}
+.tg1{font-size:8pt;font-family:Times New Roman;text-align:left;line-height:1.1;color: #003f75;white-space: pre-wrap}
+.tg2{font-size:10pt;font-family:Times New Roman;text-align:left;line-height:1.1;color: #003f75;white-space: pre-wrap}
+ 
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="margin: 0"&gt;
+&lt;table class="box1"&gt;
+&lt;tr&gt;
+  &lt;td&gt;
+    &lt;div style="float: left;"&gt; &lt;img  width="45" height="45" src="data:image/gif;base64,{Logo}"/&gt;
+&lt;/div&gt;
+    &lt;div class="tg2" style="margin-left:84; margin-top:5px"&gt;&lt;b&gt;ДОКУМЕНТ ПОДПИСАН&lt;/b&gt;&lt;/div&gt;
+    &lt;div class="tg2" style="margin-left:66"&gt;&lt;b&gt;ЭЛЕКТРОННОЙ ПОДПИСЬЮ&lt;/b&gt;&lt;/div&gt;
+    &lt;div class="tg1" style="margin-left:0px; margin-top:12px"&gt;НОР: &lt;small&gt;{BusinessUnit}&lt;/small&gt;&lt;/div&gt;
+    &lt;div class="tg1" style="margin-left:0px"&gt;Владелец: &lt;b&gt;{Owner}&lt;/b&gt;&lt;/div&gt;
+    &lt;div class="tg1" style="margin-left:0px"&gt;Подписан: {SignDate}&lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;</value>
+  </data>
+</root>

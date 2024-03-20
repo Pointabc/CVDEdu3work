@@ -14,10 +14,25 @@ namespace CentrVD.Integration.Server
     {
       var allUsers = Roles.AllUsers;
       Reports.AccessRights.Grant(Sungero.Docflow.Reports.GetApprovalRulesConsolidatedReport().Info, allUsers, DefaultReportAccessRightsTypes.Execute);
-      //var role = Roles.GetAll(r => r.Sid == roleGuid).FirstOrDefault();
-      //role.
       
       CreateReportsTables();
+      CreateStampInDocumentStage();
+    }
+    
+    /// <summary>
+    /// Создание записи нового типа сценария "Автонумерация служебных записок".
+    /// </summary>
+    public static void CreateStampInDocumentStage()
+    {
+      InitializationLogger.DebugFormat("Init: Create stage for add stamp in document.");
+      if (CentrVD.Integration.AddStampToDocuments.GetAll().Any())
+        return;
+
+      var stage = CentrVD.Integration.AddStampToDocuments.Create();
+      stage.Name = "Добавить штамп на публичную версию документа.";
+      stage.TimeoutInHours = 4;
+      stage.Save();
+
     }
     
     #region Отчеты
