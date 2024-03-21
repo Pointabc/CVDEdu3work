@@ -86,6 +86,11 @@
           "Name": "officialDocument",
           "ParameterType": "global::CentrVD.Category3.IOfficialDocument",
           "ParameterTypeFullName": "CentrVD.Category3.IOfficialDocument, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "isCreatePublicBody",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
         }
       ],
       "Placement": "Shared",

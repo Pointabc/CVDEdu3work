@@ -13,7 +13,7 @@ namespace CentrVD.Category3.Server
     /// Создать версию документа в формате pdf и добавить штамп
     /// </summary>
     [Remote, Public]
-    public void ConvertToPdfAndAddSignatureMark()
+    public void ConvertToPdfAndAddSignatureMark(bool isCreatePublicBody)
     {
       if (!_obj.HasVersions)
       {
@@ -25,31 +25,37 @@ namespace CentrVD.Category3.Server
       
       string htmlStamp = GetStampInfo(_obj).HTML;
       System.IO.Stream pdfDocumentStream = null;
-      using (var inputStream = new System.IO.MemoryStream(Sungero.Docflow.PublicFunctions.Module.GetBinaryData(_obj.LastVersion.Body)))
+      
+      if (isCreatePublicBody)
       {
-        try
+        base.GeneratePublicBodyWithSignatureMark(_obj.LastVersion.Id, htmlStamp);
+      }
+      else
+      {
+        using (var inputStream = new System.IO.MemoryStream(Sungero.Docflow.PublicFunctions.Module.GetBinaryData(_obj.LastVersion.Body)))
         {
-          pdfDocumentStream = Sungero.Docflow.IsolatedFunctions.PdfConverter.GeneratePdf(inputStream, _obj.LastVersion.AssociatedApplication.Extension);
-          if (!string.IsNullOrEmpty(htmlStamp))
+          try
           {
-            pdfDocumentStream = Sungero.Docflow.IsolatedFunctions.PdfConverter.AddSignatureStamp(pdfDocumentStream,
-                                                                                                 _obj.LastVersion.AssociatedApplication.Extension,
-                                                                                                 htmlStamp, Sungero.Docflow.Resources.SignatureMarkAnchorSymbol,
-                                                                                                 Sungero.Docflow.Constants.Module.SearchablePagesLimit);
-            //: Sungero.Docflow.IsolatedFunctions.PdfConverter.AddRegistrationStamp(pdfDocumentStream, htmlStamp, 1, rightIndent, bottomIndent);
-            
-            // Создать новую версию документа.
-            _obj.CreateVersionFrom(pdfDocumentStream, "pdf");
-            _obj.Save();
-            pdfDocumentStream.Close();
+            pdfDocumentStream = Sungero.Docflow.IsolatedFunctions.PdfConverter.GeneratePdf(inputStream, _obj.LastVersion.AssociatedApplication.Extension);
+            if (!string.IsNullOrEmpty(htmlStamp))
+            {
+              pdfDocumentStream = Sungero.Docflow.IsolatedFunctions.PdfConverter.AddSignatureStamp(pdfDocumentStream,
+                                                                                                   _obj.LastVersion.AssociatedApplication.Extension,
+                                                                                                   htmlStamp, Sungero.Docflow.Resources.SignatureMarkAnchorSymbol,
+                                                                                                   Sungero.Docflow.Constants.Module.SearchablePagesLimit);
+              
+              _obj.CreateVersionFrom(pdfDocumentStream, "pdf");
+              _obj.Save();
+              pdfDocumentStream.Close();
+            }
           }
-        }
-        catch (Exception ex)
-        {
-          if (ex is AppliedCodeException)
-            Logger.Error(Sungero.Docflow.Resources.PdfConvertErrorFormat(_obj.Id), ex.InnerException);
-          else
-            Logger.Error(Sungero.Docflow.Resources.PdfConvertErrorFormat(_obj.Id), ex);
+          catch (Exception ex)
+          {
+            if (ex is AppliedCodeException)
+              Logger.Error(Sungero.Docflow.Resources.PdfConvertErrorFormat(_obj.Id), ex.InnerException);
+            else
+              Logger.Error(Sungero.Docflow.Resources.PdfConvertErrorFormat(_obj.Id), ex);
+          }
         }
       }
     }

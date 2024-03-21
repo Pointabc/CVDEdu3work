@@ -26,8 +26,7 @@ namespace CentrVD.Integration.Server
       if (document.DocumentKind == null)
         return this.GetErrorResult("Не найден вид документа.");
       
-      //CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.MyConvertToPdfWithSignatureMark(CentrVD.Category3.OfficialDocuments.As(document));
-      CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.ConvertToPdfAndAddSignatureMark(CentrVD.Category3.OfficialDocuments.As(document));
+      CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.ConvertToPdfAndAddSignatureMark(CentrVD.Category3.OfficialDocuments.As(document), true);
 
       return result;
     }

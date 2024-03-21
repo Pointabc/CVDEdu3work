@@ -104,7 +104,7 @@
           "Name": "Observers",
           "ColumnNumber": 0,
           "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiLikeEditorToCollectionBinder",
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiSelectFromListEditorToCollectionBinder",
           "ParentGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
           "PropertyGuid": "f3631896-b920-4f62-9546-1cc1a991546f",
           "RowNumber": 3,
