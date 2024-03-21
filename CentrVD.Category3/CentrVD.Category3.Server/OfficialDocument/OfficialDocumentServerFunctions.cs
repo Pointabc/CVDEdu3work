@@ -13,8 +13,14 @@ namespace CentrVD.Category3.Server
     /// Создать версию документа в формате pdf и добавить штамп
     /// </summary>
     [Remote, Public]
-    public void ConvertToPdfAndAddSignatureMark(bool isSignatureMark)
+    public void ConvertToPdfAndAddSignatureMark()
     {
+      if (!_obj.HasVersions)
+      {
+        Logger.Error(string.Format("Документ {0} не имеет версий.", _obj.DisplayValue));
+        return;
+      }
+      
       var signInfo = GetSignInfo(_obj);
       
       string htmlStamp = GetStampInfo(_obj).HTML;

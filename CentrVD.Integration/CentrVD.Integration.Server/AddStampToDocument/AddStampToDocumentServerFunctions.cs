@@ -27,7 +27,7 @@ namespace CentrVD.Integration.Server
         return this.GetErrorResult("Не найден вид документа.");
       
       //CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.MyConvertToPdfWithSignatureMark(CentrVD.Category3.OfficialDocuments.As(document));
-      CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.ConvertToPdfAndAddSignatureMark(CentrVD.Category3.OfficialDocuments.As(document), true);
+      CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.ConvertToPdfAndAddSignatureMark(CentrVD.Category3.OfficialDocuments.As(document));
 
       return result;
     }
@@ -38,11 +38,16 @@ namespace CentrVD.Integration.Server
       base.Validate(rule, stagesSequence, stage, e);
 
       var reviewTaskStages = stagesSequence.Where(s => s.StageType == Sungero.Docflow.ApprovalRuleBaseStages.StageType.Sign);
-
-      // В одной ветке правила должно быть не более одного этапа отправки документа на рассмотрение.
+      
+      int indStamp = stagesSequence.ToList().IndexOf(reviewTaskStages.FirstOrDefault());
+      var scenario = stagesSequence.Where(s => s.StageType == Sungero.Docflow.ApprovalRuleBaseStages.StageType.Function);
+      int indScenario = stagesSequence.ToList().IndexOf(scenario.FirstOrDefault());
+      
+      // В одной ветке правила должно содержать этап подписание.
       if (!reviewTaskStages.Any())
         e.AddError(stage, "Необходимо сначало добавить этап подписания.");
-
+      if (indStamp > indScenario)
+        e.AddError(stage, "Этап подписания должен идти ранее этапа добавления штампа на подписанный документ.");
     }
     
   }

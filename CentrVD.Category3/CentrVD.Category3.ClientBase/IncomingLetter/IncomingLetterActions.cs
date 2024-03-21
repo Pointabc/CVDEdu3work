@@ -11,7 +11,7 @@ namespace CentrVD.Category3.Client
   {
     public virtual void AddStampOnPublicVersion(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.ConvertToPdfAndAddSignatureMark(_obj, true);
+      CentrVD.Category3.PublicFunctions.OfficialDocument.Remote.ConvertToPdfAndAddSignatureMark(_obj);
       //base.ConvertToPdf(e);
       //base.AddRegistrationStamp(e);
     }
