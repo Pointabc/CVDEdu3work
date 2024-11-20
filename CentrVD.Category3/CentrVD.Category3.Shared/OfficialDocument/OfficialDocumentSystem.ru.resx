@@ -58,4 +58,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action_FindTasksWithDocument" xml:space="preserve">
+    <value>Найти все задачи, в которые вложен документ</value>
+  </data>
+  <data name="Action_FindTasksWithDocumentHint" xml:space="preserve">
+    <value>Найти все задачи, в которые вложен документ</value>
+  </data>
+  <data name="Action_FindTasksWithDocumentDescription" xml:space="preserve">
+    <value>Найти все задачи, в которые вложен документ</value>
+  </data>
 </root>

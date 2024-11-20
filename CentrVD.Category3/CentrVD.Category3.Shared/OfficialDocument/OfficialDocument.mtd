@@ -3,6 +3,16 @@
   "NameGuid": "4f73ab6e-fc83-4625-8f5f-613c1d5ebe58",
   "Name": "OfficialDocument",
   "AccessRightsMode": "Both",
+  "Actions": [
+    {
+      "NameGuid": "2a8771f2-2565-4337-8294-2b4982a94fa8",
+      "Name": "FindTasksWithDocument",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_FindTasksWithDocument_large_2a8771f22565433782942b4982a94fa8.png",
+      "SmallIconName": "Action_FindTasksWithDocument_small_2a8771f22565433782942b4982a94fa8.png"
+    }
+  ],
   "BaseGuid": "58cca102-1e97-4f07-b6ac-fd866a8b7cb1",
   "CanBeNavigationPropertyType": true,
   "CreationAreaMetadata": {
@@ -98,6 +108,20 @@
       "ReturnTypeFullName": "System.Void"
     },
     {
+      "Name": "FindTasksWithDocument",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "officialDocument",
+          "ParameterType": "global::CentrVD.Category3.IOfficialDocument",
+          "ParameterTypeFullName": "CentrVD.Category3.IOfficialDocument, Sungero.Domain.Interfaces"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "global::System.Linq.IQueryable<global::Sungero.Workflow.ITask>",
+      "ReturnTypeFullName": "System.Linq.IQueryable"
+    },
+    {
       "Name": "MyConvertToPdfWithSignatureMark",
       "IsRemote": true,
       "Parameters": [
@@ -118,7 +142,16 @@
     "NameGuid": "cabcea9c-3756-480c-81b4-ef84b2b7adff",
     "Name": "RibbonCard",
     "Categories": [],
-    "Elements": [],
+    "Elements": [
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "e25899c3-ef39-412c-aa85-fc7f9db58949",
+        "Name": "ActionButton",
+        "ActionGuid": "2a8771f2-2565-4337-8294-2b4982a94fa8",
+        "Index": 74,
+        "ParentGuid": "4f04b1b4-b6b2-424f-a95a-9a6927cfbdb4"
+      }
+    ],
     "Groups": [],
     "IsAncestorMetadata": true,
     "Pages": [],

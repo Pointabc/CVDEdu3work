@@ -9,6 +9,18 @@ namespace CentrVD.Category3.Server
 {
   partial class OfficialDocumentFunctions
   {
+    
+    /// <summary>
+    /// Найти все задачи связанные с документом
+    /// </summary>
+    [Public, Remote]
+    public IQueryable<Sungero.Workflow.ITask> FindTasksWithDocument()
+    {
+      var tasks = Sungero.Workflow.Tasks.GetAll(t => t.AttachmentDetails.Any(a => a.AttachmentId == _obj.Id && 
+                                                                             _obj.DocumentKind.DocumentType.DocumentTypeGuid == a.AttachmentTypeGuid.Value.ToString()));
+      return tasks;
+    }
+    
     /// <summary>
     /// Создать версию документа в формате pdf и добавить штамп
     /// </summary>

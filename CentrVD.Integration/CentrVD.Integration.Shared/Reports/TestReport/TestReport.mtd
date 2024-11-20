@@ -11,7 +11,8 @@
   ],
   "HandledEvents": [
     "BeforeExecuteClient",
-    "AfterExecuteServer"
+    "AfterExecuteServer",
+    "BeforeExecuteServer"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "IntegrationEmployeeSignedDocumentsReport",

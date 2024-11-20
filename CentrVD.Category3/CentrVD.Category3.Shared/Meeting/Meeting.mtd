@@ -81,7 +81,7 @@
           "Name": "Members",
           "ColumnNumber": 0,
           "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiLikeEditorToCollectionBinder",
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiSelectEditorToCollectionBinder",
           "ParentGuid": "de3a35f0-d02f-491a-9feb-28b9ddef6626",
           "PropertyGuid": "876c9202-9efd-4a8c-b46b-ce9d132c7230",
           "RowNumber": 2,
@@ -90,10 +90,6 @@
             {
               "Name": "NavigationPropertyGuid",
               "Value": "c6e9e44e-de68-41b4-ba8d-5423eeebda18"
-            },
-            {
-              "Name": "IsDuplicatesAllowed",
-              "Value": false
             }
           ],
           "Versions": []
